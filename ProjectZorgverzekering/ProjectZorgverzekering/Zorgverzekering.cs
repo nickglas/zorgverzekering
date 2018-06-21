@@ -8,5 +8,7 @@ namespace ProjectZorgverzekering
 {
     class Zorgverzekering
     {
+        public int IdZorgverzekering { get; set; }
+        public string NaamZorgverzekering { get; set; }
     }
 }
