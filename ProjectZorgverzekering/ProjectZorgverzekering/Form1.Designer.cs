@@ -243,25 +243,27 @@
             // 
             // ArtsInvoegenKNOP
             // 
-            this.ArtsInvoegenKNOP.Location = new System.Drawing.Point(27, 127);
+            this.ArtsInvoegenKNOP.Location = new System.Drawing.Point(27, 22);
             this.ArtsInvoegenKNOP.Name = "ArtsInvoegenKNOP";
             this.ArtsInvoegenKNOP.Size = new System.Drawing.Size(163, 96);
             this.ArtsInvoegenKNOP.TabIndex = 2;
             this.ArtsInvoegenKNOP.Text = "Arts Invoegen";
             this.ArtsInvoegenKNOP.UseVisualStyleBackColor = true;
+            this.ArtsInvoegenKNOP.Click += new System.EventHandler(this.ArtsInvoegenKNOP_Click);
             // 
             // KlantInvoegenKNOP
             // 
-            this.KlantInvoegenKNOP.Location = new System.Drawing.Point(196, 25);
+            this.KlantInvoegenKNOP.Location = new System.Drawing.Point(196, 22);
             this.KlantInvoegenKNOP.Name = "KlantInvoegenKNOP";
             this.KlantInvoegenKNOP.Size = new System.Drawing.Size(167, 96);
             this.KlantInvoegenKNOP.TabIndex = 1;
             this.KlantInvoegenKNOP.Text = "Klant Invoegen";
             this.KlantInvoegenKNOP.UseVisualStyleBackColor = true;
+            this.KlantInvoegenKNOP.Click += new System.EventHandler(this.KlantInvoegenKNOP_Click);
             // 
             // VerwijderBUTTON
             // 
-            this.VerwijderBUTTON.Location = new System.Drawing.Point(27, 25);
+            this.VerwijderBUTTON.Location = new System.Drawing.Point(27, 127);
             this.VerwijderBUTTON.Name = "VerwijderBUTTON";
             this.VerwijderBUTTON.Size = new System.Drawing.Size(163, 96);
             this.VerwijderBUTTON.TabIndex = 0;
@@ -451,12 +453,6 @@
         private System.Windows.Forms.TextBox ArstNaamBOX;
         private System.Windows.Forms.TextBox ArtsContractBOX;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn klantIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn artIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zorgVerzekeringDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn naamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresgegevensDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
 

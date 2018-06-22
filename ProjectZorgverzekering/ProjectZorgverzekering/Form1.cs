@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace ProjectZorgverzekering
 {
@@ -37,5 +38,20 @@ namespace ProjectZorgverzekering
             // TODO: This line of code loads data into the 'databaseDataSet.KLANT' table. You can move, or remove it, as needed.
 
         }
+
+        private void KlantInvoegenKNOP_Click(object sender, EventArgs e)
+        {
+            var klantform = new Form2();
+            klantform.ShowDialog();
+        }
+
+        private void ArtsInvoegenKNOP_Click(object sender, EventArgs e)
+        {
+            var artsform = new Form3();
+            artsform.ShowDialog();
+        }
+
+        
+
     }
 }
