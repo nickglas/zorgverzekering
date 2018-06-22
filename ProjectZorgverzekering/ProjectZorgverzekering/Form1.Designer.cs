@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,19 +63,39 @@
             this.ArstNaamBOX = new System.Windows.Forms.TextBox();
             this.ArtsContractBOX = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.databaseDataSet = new ProjectZorgverzekering.DatabaseDataSet();
+            this.kLANTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kLANTTableAdapter = new ProjectZorgverzekering.DatabaseDataSetTableAdapters.KLANTTableAdapter();
+            this.klantIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zorgVerzekeringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.naamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresgegevensDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kLANTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.klantIdDataGridViewTextBoxColumn,
+            this.artIdDataGridViewTextBoxColumn,
+            this.zorgVerzekeringDataGridViewTextBoxColumn,
+            this.naamDataGridViewTextBoxColumn,
+            this.adresgegevensDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.kLANTBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(17, 16);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(519, 460);
             this.dataGridView1.TabIndex = 0;
@@ -83,7 +104,7 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(556, 16);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(519, 460);
             this.dataGridView2.TabIndex = 1;
@@ -104,9 +125,9 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(17, 485);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(519, 289);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -116,7 +137,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(143, 255);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(183, 28);
             this.button5.TabIndex = 20;
@@ -126,7 +147,7 @@
             // EmailBOX
             // 
             this.EmailBOX.Location = new System.Drawing.Point(143, 203);
-            this.EmailBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailBOX.Margin = new System.Windows.Forms.Padding(4);
             this.EmailBOX.Name = "EmailBOX";
             this.EmailBOX.Size = new System.Drawing.Size(132, 22);
             this.EmailBOX.TabIndex = 17;
@@ -144,7 +165,7 @@
             // AdresBOX
             // 
             this.AdresBOX.Location = new System.Drawing.Point(143, 171);
-            this.AdresBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdresBOX.Margin = new System.Windows.Forms.Padding(4);
             this.AdresBOX.Name = "AdresBOX";
             this.AdresBOX.Size = new System.Drawing.Size(132, 22);
             this.AdresBOX.TabIndex = 15;
@@ -162,7 +183,7 @@
             // NaamBOX
             // 
             this.NaamBOX.Location = new System.Drawing.Point(143, 139);
-            this.NaamBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NaamBOX.Margin = new System.Windows.Forms.Padding(4);
             this.NaamBOX.Name = "NaamBOX";
             this.NaamBOX.Size = new System.Drawing.Size(132, 22);
             this.NaamBOX.TabIndex = 13;
@@ -180,7 +201,7 @@
             // ZorgverzekeringBOX
             // 
             this.ZorgverzekeringBOX.Location = new System.Drawing.Point(143, 107);
-            this.ZorgverzekeringBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ZorgverzekeringBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ZorgverzekeringBOX.Name = "ZorgverzekeringBOX";
             this.ZorgverzekeringBOX.Size = new System.Drawing.Size(132, 22);
             this.ZorgverzekeringBOX.TabIndex = 11;
@@ -199,7 +220,7 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(143, 75);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 9;
@@ -218,7 +239,7 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(143, 43);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 7;
@@ -240,9 +261,9 @@
             this.groupBox2.Controls.Add(this.KlantInvoegenKNOP);
             this.groupBox2.Controls.Add(this.VerwijderBUTTON);
             this.groupBox2.Location = new System.Drawing.Point(556, 485);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(519, 289);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -251,7 +272,7 @@
             // ContractVerlengenKNOP
             // 
             this.ContractVerlengenKNOP.Location = new System.Drawing.Point(261, 156);
-            this.ContractVerlengenKNOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContractVerlengenKNOP.Margin = new System.Windows.Forms.Padding(4);
             this.ContractVerlengenKNOP.Name = "ContractVerlengenKNOP";
             this.ContractVerlengenKNOP.Size = new System.Drawing.Size(223, 118);
             this.ContractVerlengenKNOP.TabIndex = 3;
@@ -261,7 +282,7 @@
             // ArtsInvoegenKNOP
             // 
             this.ArtsInvoegenKNOP.Location = new System.Drawing.Point(36, 156);
-            this.ArtsInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsInvoegenKNOP.Name = "ArtsInvoegenKNOP";
             this.ArtsInvoegenKNOP.Size = new System.Drawing.Size(217, 118);
             this.ArtsInvoegenKNOP.TabIndex = 2;
@@ -271,7 +292,7 @@
             // KlantInvoegenKNOP
             // 
             this.KlantInvoegenKNOP.Location = new System.Drawing.Point(261, 31);
-            this.KlantInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KlantInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4);
             this.KlantInvoegenKNOP.Name = "KlantInvoegenKNOP";
             this.KlantInvoegenKNOP.Size = new System.Drawing.Size(223, 118);
             this.KlantInvoegenKNOP.TabIndex = 1;
@@ -281,7 +302,7 @@
             // VerwijderBUTTON
             // 
             this.VerwijderBUTTON.Location = new System.Drawing.Point(36, 31);
-            this.VerwijderBUTTON.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.VerwijderBUTTON.Margin = new System.Windows.Forms.Padding(4);
             this.VerwijderBUTTON.Name = "VerwijderBUTTON";
             this.VerwijderBUTTON.Size = new System.Drawing.Size(217, 118);
             this.VerwijderBUTTON.TabIndex = 0;
@@ -292,7 +313,7 @@
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(1097, 16);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(519, 460);
             this.dataGridView3.TabIndex = 4;
@@ -311,9 +332,9 @@
             this.groupBox3.Controls.Add(this.ArtsContractBOX);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(1097, 485);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(519, 289);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -323,7 +344,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(151, 254);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(183, 28);
             this.button6.TabIndex = 33;
@@ -334,7 +355,7 @@
             // 
             this.ArtsIDBOX.Enabled = false;
             this.ArtsIDBOX.Location = new System.Drawing.Point(151, 43);
-            this.ArtsIDBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsIDBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsIDBOX.Name = "ArtsIDBOX";
             this.ArtsIDBOX.Size = new System.Drawing.Size(132, 22);
             this.ArtsIDBOX.TabIndex = 22;
@@ -363,7 +384,7 @@
             // ArtsAdresBOX
             // 
             this.ArtsAdresBOX.Location = new System.Drawing.Point(151, 171);
-            this.ArtsAdresBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsAdresBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsAdresBOX.Name = "ArtsAdresBOX";
             this.ArtsAdresBOX.Size = new System.Drawing.Size(132, 22);
             this.ArtsAdresBOX.TabIndex = 30;
@@ -371,7 +392,7 @@
             // ArtsEmailBOX
             // 
             this.ArtsEmailBOX.Location = new System.Drawing.Point(151, 75);
-            this.ArtsEmailBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsEmailBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsEmailBOX.Name = "ArtsEmailBOX";
             this.ArtsEmailBOX.Size = new System.Drawing.Size(132, 22);
             this.ArtsEmailBOX.TabIndex = 24;
@@ -399,7 +420,7 @@
             // ArstNaamBOX
             // 
             this.ArstNaamBOX.Location = new System.Drawing.Point(151, 139);
-            this.ArstNaamBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArstNaamBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArstNaamBOX.Name = "ArstNaamBOX";
             this.ArstNaamBOX.Size = new System.Drawing.Size(132, 22);
             this.ArstNaamBOX.TabIndex = 28;
@@ -408,7 +429,7 @@
             // 
             this.ArtsContractBOX.Enabled = false;
             this.ArtsContractBOX.Location = new System.Drawing.Point(151, 107);
-            this.ArtsContractBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsContractBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsContractBOX.Name = "ArtsContractBOX";
             this.ArtsContractBOX.Size = new System.Drawing.Size(132, 22);
             this.ArtsContractBOX.TabIndex = 26;
@@ -423,6 +444,56 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Naam";
             // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kLANTBindingSource
+            // 
+            this.kLANTBindingSource.DataMember = "KLANT";
+            this.kLANTBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // kLANTTableAdapter
+            // 
+            this.kLANTTableAdapter.ClearBeforeFill = true;
+            // 
+            // klantIdDataGridViewTextBoxColumn
+            // 
+            this.klantIdDataGridViewTextBoxColumn.DataPropertyName = "KlantId";
+            this.klantIdDataGridViewTextBoxColumn.HeaderText = "KlantId";
+            this.klantIdDataGridViewTextBoxColumn.Name = "klantIdDataGridViewTextBoxColumn";
+            // 
+            // artIdDataGridViewTextBoxColumn
+            // 
+            this.artIdDataGridViewTextBoxColumn.DataPropertyName = "ArtId";
+            this.artIdDataGridViewTextBoxColumn.HeaderText = "ArtId";
+            this.artIdDataGridViewTextBoxColumn.Name = "artIdDataGridViewTextBoxColumn";
+            // 
+            // zorgVerzekeringDataGridViewTextBoxColumn
+            // 
+            this.zorgVerzekeringDataGridViewTextBoxColumn.DataPropertyName = "ZorgVerzekering";
+            this.zorgVerzekeringDataGridViewTextBoxColumn.HeaderText = "ZorgVerzekering";
+            this.zorgVerzekeringDataGridViewTextBoxColumn.Name = "zorgVerzekeringDataGridViewTextBoxColumn";
+            // 
+            // naamDataGridViewTextBoxColumn
+            // 
+            this.naamDataGridViewTextBoxColumn.DataPropertyName = "Naam";
+            this.naamDataGridViewTextBoxColumn.HeaderText = "Naam";
+            this.naamDataGridViewTextBoxColumn.Name = "naamDataGridViewTextBoxColumn";
+            // 
+            // adresgegevensDataGridViewTextBoxColumn
+            // 
+            this.adresgegevensDataGridViewTextBoxColumn.DataPropertyName = "Adresgegevens";
+            this.adresgegevensDataGridViewTextBoxColumn.HeaderText = "Adresgegevens";
+            this.adresgegevensDataGridViewTextBoxColumn.Name = "adresgegevensDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -434,9 +505,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "ZorgVerzekering Applicatie";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -445,6 +517,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kLANTBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,6 +559,15 @@
         private System.Windows.Forms.TextBox ArstNaamBOX;
         private System.Windows.Forms.TextBox ArtsContractBOX;
         private System.Windows.Forms.Label label9;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource kLANTBindingSource;
+        private DatabaseDataSetTableAdapters.KLANTTableAdapter kLANTTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn klantIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zorgVerzekeringDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresgegevensDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
 

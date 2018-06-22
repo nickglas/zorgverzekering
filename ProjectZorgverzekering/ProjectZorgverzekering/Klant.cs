@@ -16,7 +16,7 @@ namespace ProjectZorgverzekering
         public string Adresgegevens { get; set; }
         public string Email { get; set; }
 
-        public virtual List<Post> Posts { get; set; }
+        public virtual List<Medicatie> Medicaties { get; set; }
     }
 
     public class Post
