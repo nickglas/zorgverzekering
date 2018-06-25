@@ -34,9 +34,9 @@ namespace ProjectZorgverzekering
         public string Email { get; set; }
     }
 
-    public class KlantContext : DbContext
+     class KlantContext : DbContext
     {
-        DbSet<Klant> Klant { get; set; }
+      public  DbSet<Klant> Klant { get; set; }
     }
     
 
