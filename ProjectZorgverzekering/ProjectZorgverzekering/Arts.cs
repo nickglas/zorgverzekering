@@ -10,10 +10,9 @@ namespace ProjectZorgverzekering
     {
         public int ArtsId { get; set; }
         public string Email { get; set; }
-        public int ContractId { get; set; }
+        public DateTime Einddatum { get; set; }
         public string NaamArts { get; set; }
-        public string Klanten { get; set; }
+        public List<Klant> Klanten { get; set; }
         public string AdresArts { get; set; }
-
     }
 }

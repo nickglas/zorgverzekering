@@ -10,8 +10,13 @@ namespace ProjectZorgverzekering
     class Klant
     {
         public int KlantId { get; set; }
+
+        public virtual Arts Arts { get; set; }
         public int ArtsId { get; set; }
+
+        public virtual Zorgverzekering Zorgverzekering { get; set; }
         public int ZorgverzekeringId {get; set;}
+
         public string Naam { get; set; }
         public string Adresgegevens { get; set; }
         public string Email { get; set; }
