@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.EmailBOX = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.ArstNaamBOX = new System.Windows.Forms.TextBox();
             this.ArtsContractBOX = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -114,6 +114,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Klant Gegevens";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(239, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 96);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Mannual Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
@@ -272,6 +282,7 @@
             this.VerwijderBUTTON.TabIndex = 0;
             this.VerwijderBUTTON.Text = "Verwijderen";
             this.VerwijderBUTTON.UseVisualStyleBackColor = true;
+            this.VerwijderBUTTON.Click += new System.EventHandler(this.VerwijderBUTTON_Click);
             // 
             // dataGridView3
             // 
@@ -393,16 +404,6 @@
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 27;
             this.label9.Text = "Naam";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(239, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 96);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Mannual Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 

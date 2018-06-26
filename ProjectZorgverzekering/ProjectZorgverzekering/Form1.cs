@@ -78,5 +78,25 @@ namespace ProjectZorgverzekering
                 dataGridView1.DataSource = query.ToList();
             }
         }
+
+        private void VerwijderBUTTON_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+            {
+               if(MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    //code uitvoeren om te verwijderen
+                    
+                    MessageBox.Show("Succesvol verwijderd");
+                } else
+                {
+                    MessageBox.Show("Verwijderen geannuleerd !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer het id om te verwijderen");
+            }
+        }
     }
 }
