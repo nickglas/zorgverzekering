@@ -12,7 +12,7 @@ namespace ProjectZorgverzekering
         public string Email { get; set; }
         public DateTime Einddatum { get; set; }
         public string NaamArts { get; set; }
-        public List<Klant> Klanten { get; set; }
+        
         public string AdresArts { get; set; }
     }
 }

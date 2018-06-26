@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectZorgverzekering.Classes;
 
 namespace ProjectZorgverzekering
 {
@@ -28,20 +29,35 @@ namespace ProjectZorgverzekering
             {
                 using (var db = new KlantContext())
                 {
-                    string Naam = NaamBox.ToString();
-                    string Email = EmailBox.ToString();
-                    string Adresgegevens = AdresBox.ToString();
-                    string Zorgverzekering = VerzekeringBox.ToString();
+                    
+                    string Naam = NaamBox.Text;
+                    string Email = EmailBox.Text;
+                    string Adresgegevens = AdresBox.Text;
+                    string Zorgverzekering = VerzekeringBox.Text;
 
-                    var klant = new Klant { Naam = Naam , Email = Email , Adresgegevens = Adresgegevens , ZorgverzekeringId = 1  };
-                    db.Klant.Add(klant);
+                    var klant = new Klant
+                    {
+                        
+                        Naam = Naam,
+                        Email = Email,
+                        Adresgegevens = Adresgegevens,
+                        Verzekering = Zorgverzekering.ToString()
+                    };
+
+                    db.Klanten.Add(klant);
                     db.SaveChanges();
+
+                    var query = from b in db.Klanten
+                                orderby b.KlantId
+                                select b;
+                    var Form1 = new Form1();
+                    Form1.dataGridView1.DataSource = query.ToList();
                 }
             }
-            catch (Exception)
+            catch (Exception Eerror)
             {
-
-                throw;
+                
+               MessageBox.Show(Eerror.Message);
             }
         }
     }

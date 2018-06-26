@@ -12,7 +12,7 @@ namespace ProjectZorgverzekering
     {
         public int MedicatieId { get; set; }
         public string MedicatieNaam { get; set; }
-        public virtual List<Klant> Klanten { get; set; }
+        
     }
 
 }
