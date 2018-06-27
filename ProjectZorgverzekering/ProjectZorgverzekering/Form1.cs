@@ -18,30 +18,7 @@ namespace ProjectZorgverzekering
         {
             
             InitializeComponent();
-            using (var db = new KlantContext())
-            {
-                
-                var query = from b in db.Klanten
-                            orderby b.Email
-                            select b;
-                dataGridView1.DataSource = query.ToList();
-            }
-
-            using (var db = new MedicatieContext())
-            {
-                var query = from b in db.Medicijnen
-                            orderby b.MedicatieId
-                            select b;
-                dataGridView3.DataSource = query.ToList();
-            }
-
-            using (var db = new ArtsContext())
-            {
-                var query = from b in db.Artsen
-                            orderby b.ArtsId
-                            select b;
-                dataGridView3.DataSource = query.ToList();
-            }
+            
 
         }
 
@@ -63,30 +40,39 @@ namespace ProjectZorgverzekering
         public void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.KLANT' table. You can move, or remove it, as needed.
-            using (var db = new KlantContext())
+            try
+            {
+                using (var db = new KlantContext())
+                {
+
+                    var query = from b in db.Klanten
+                                orderby b.Email
+                                select b;
+                    dataGridView1.DataSource = query.ToList();
+                }
+
+                using (var db = new MedicatieContext())
+                {
+                    var query = from b in db.Medicijnen
+                                orderby b.MedicatieId
+                                select b;
+                    dataGridView3.DataSource = query.ToList();
+                }
+
+                using (var db = new ArtsContext())
+                {
+                    var query = from b in db.Artsen
+                                orderby b.ArtsId
+                                select b;
+                    dataGridView3.DataSource = query.ToList();
+                }
+            }
+            catch (Exception error)
             {
 
-                var query = from b in db.Klanten
-                            orderby b.Email
-                            select b;
-                dataGridView1.DataSource = query.ToList();
+                MessageBox.Show(error.Message);
             }
-
-            using (var db = new MedicatieContext())
-            {
-                var query = from b in db.Medicijnen
-                            orderby b.MedicatieId
-                            select b;
-                dataGridView3.DataSource = query.ToList();
-            }
-
-            using (var db = new ArtsContext())
-            {
-                var query = from b in db.Artsen
-                            orderby b.ArtsId
-                            select b;
-                dataGridView3.DataSource = query.ToList();
-            }
+            
         }
 
         public void KlantInvoegenKNOP_Click(object sender, EventArgs e)
