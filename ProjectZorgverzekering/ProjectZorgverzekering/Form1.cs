@@ -85,7 +85,8 @@ namespace ProjectZorgverzekering
         public void ArtsInvoegenKNOP_Click(object sender, EventArgs e)
         {
             //artsen
-            
+            var artsform = new Form3();
+            artsform.ShowDialog();
         }
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
