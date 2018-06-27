@@ -89,10 +89,7 @@ namespace ProjectZorgverzekering
             artsform.ShowDialog();
         }
 
-        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -125,22 +122,44 @@ namespace ProjectZorgverzekering
 
         private void VerwijderBUTTON_Click(object sender, EventArgs e)
         {
+
             if (dataGridView1.SelectedRows != null)
             {
-               if(MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                try
                 {
-                    //code uitvoeren om te verwijderen
-                    
-                    MessageBox.Show("Succesvol verwijderd");
-                } else
-                {
-                    MessageBox.Show("Verwijderen geannuleerd !");
+                    if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        //code uitvoeren om te verwijderen
+                        using (var ctx = new KlantContext())
+                        {
+                            int rowindex = dataGridView1.CurrentCell.RowIndex;
+                            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
+                            var klant = new Klant { KlantId = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[columnindex].Value) };
+                            ctx.Klanten.Attach(klant);
+                            ctx.Klanten.Remove(klant);
+                            ctx.SaveChanges();
+                        }
+                        MessageBox.Show("Succesvol verwijderd");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecteer het id om te verwijderen");
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Selecteer het id om te verwijderen");
-            }
+                catch (FormatException Ferror)
+                {
+                    MessageBox.Show("U moet expliciet een id cell selecteren. \n\n\n\n\n" + "De uitgebreide error is : " + Ferror);
+                }
+
+
+
+
+
+
+
+
+
+            }          
         }
 
         private void button2_Click(object sender, EventArgs e)

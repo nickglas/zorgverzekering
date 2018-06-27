@@ -52,6 +52,7 @@ namespace ProjectZorgverzekering
                                 select b;
                     var Form1 = new Form1();
                     Form1.dataGridView1.DataSource = query.ToList();
+                    Hide();
                 }
             }
             catch (Exception Eerror)
