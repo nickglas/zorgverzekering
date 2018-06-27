@@ -26,6 +26,23 @@ namespace ProjectZorgverzekering
                             select b;
                 dataGridView1.DataSource = query.ToList();
             }
+
+            using (var db = new MedicatieContext())
+            {
+                var query = from b in db.Medicijnen
+                            orderby b.MedicatieId
+                            select b;
+                dataGridView3.DataSource = query.ToList();
+            }
+
+            using (var db = new ArtsContext())
+            {
+                var query = from b in db.Artsen
+                            orderby b.ArtsId
+                            select b;
+                dataGridView3.DataSource = query.ToList();
+            }
+
         }
 
         public void groupBox1_Enter(object sender, EventArgs e)
@@ -46,7 +63,30 @@ namespace ProjectZorgverzekering
         public void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.KLANT' table. You can move, or remove it, as needed.
+            using (var db = new KlantContext())
+            {
 
+                var query = from b in db.Klanten
+                            orderby b.Email
+                            select b;
+                dataGridView1.DataSource = query.ToList();
+            }
+
+            using (var db = new MedicatieContext())
+            {
+                var query = from b in db.Medicijnen
+                            orderby b.MedicatieId
+                            select b;
+                dataGridView3.DataSource = query.ToList();
+            }
+
+            using (var db = new ArtsContext())
+            {
+                var query = from b in db.Artsen
+                            orderby b.ArtsId
+                            select b;
+                dataGridView3.DataSource = query.ToList();
+            }
         }
 
         public void KlantInvoegenKNOP_Click(object sender, EventArgs e)
@@ -59,8 +99,7 @@ namespace ProjectZorgverzekering
         public void ArtsInvoegenKNOP_Click(object sender, EventArgs e)
         {
             //artsen
-            var artsform = new Form3();
-            artsform.ShowDialog();
+            
         }
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,10 +112,28 @@ namespace ProjectZorgverzekering
             using (var db = new KlantContext())
             {
                 var query = from b in db.Klanten
-                            orderby b.Email
+                            orderby b.KlantId
                             select b;
                 dataGridView1.DataSource = query.ToList();
             }
+
+            using (var db = new MedicatieContext())
+            {
+                var query = from b in db.Medicijnen
+                            orderby b.MedicatieId
+                            select b;
+                dataGridView2.DataSource = query.ToList();
+            }
+
+            using (var db = new ArtsContext())
+            {
+                var query = from b in db.Artsen
+                            orderby b.ArtsId
+                            select b;
+                dataGridView3.DataSource = query.ToList();
+            }
+
+           
         }
 
         private void VerwijderBUTTON_Click(object sender, EventArgs e)
@@ -97,6 +154,12 @@ namespace ProjectZorgverzekering
             {
                 MessageBox.Show("Selecteer het id om te verwijderen");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var MedicatieForm = new Form4();
+            MedicatieForm.ShowDialog();
         }
     }
 }

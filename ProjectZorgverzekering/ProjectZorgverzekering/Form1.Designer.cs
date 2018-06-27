@@ -63,6 +63,7 @@
             this.ArstNaamBOX = new System.Windows.Forms.TextBox();
             this.ArtsContractBOX = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -127,7 +128,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(107, 207);
+            this.button5.Location = new System.Drawing.Point(70, 206);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(137, 23);
             this.button5.TabIndex = 20;
@@ -234,6 +235,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.ContractVerlengenKNOP);
             this.groupBox2.Controls.Add(this.ArtsInvoegenKNOP);
             this.groupBox2.Controls.Add(this.KlantInvoegenKNOP);
@@ -256,9 +258,9 @@
             // 
             // ArtsInvoegenKNOP
             // 
-            this.ArtsInvoegenKNOP.Location = new System.Drawing.Point(27, 22);
+            this.ArtsInvoegenKNOP.Location = new System.Drawing.Point(244, 23);
             this.ArtsInvoegenKNOP.Name = "ArtsInvoegenKNOP";
-            this.ArtsInvoegenKNOP.Size = new System.Drawing.Size(163, 96);
+            this.ArtsInvoegenKNOP.Size = new System.Drawing.Size(119, 96);
             this.ArtsInvoegenKNOP.TabIndex = 2;
             this.ArtsInvoegenKNOP.Text = "Arts Invoegen";
             this.ArtsInvoegenKNOP.UseVisualStyleBackColor = true;
@@ -266,9 +268,9 @@
             // 
             // KlantInvoegenKNOP
             // 
-            this.KlantInvoegenKNOP.Location = new System.Drawing.Point(196, 22);
+            this.KlantInvoegenKNOP.Location = new System.Drawing.Point(27, 23);
             this.KlantInvoegenKNOP.Name = "KlantInvoegenKNOP";
-            this.KlantInvoegenKNOP.Size = new System.Drawing.Size(167, 96);
+            this.KlantInvoegenKNOP.Size = new System.Drawing.Size(114, 96);
             this.KlantInvoegenKNOP.TabIndex = 1;
             this.KlantInvoegenKNOP.Text = "Klant Invoegen";
             this.KlantInvoegenKNOP.UseVisualStyleBackColor = true;
@@ -405,6 +407,16 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Naam";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(147, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 95);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Medicatie invoegen";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,6 +481,7 @@
         public System.Windows.Forms.DataGridView dataGridView3;
         public System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

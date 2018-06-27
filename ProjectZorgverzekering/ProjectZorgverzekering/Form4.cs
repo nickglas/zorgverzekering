@@ -11,44 +11,50 @@ using static ProjectZorgverzekering.Classes;
 
 namespace ProjectZorgverzekering
 {
-    public partial class Form3 : Form
+    public partial class Form4 : Form
     {
-        public Form3()
+        public Form4()
         {
             InitializeComponent();
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                using (var db = new ArtsContext())
+                using (var db = new MedicatieContext())
                 {
-
                     string Naam = NaamBox.Text;
-                    string Email = EmailBox.Text;
-                    string Adresgegevens = AdresBox.Text;
-                    string Telefoon = TelefoonBox.Text;
-                    
+                    string Beschrijving = BeschrijvingBox.Text;
+                    string Bijwerkingen = BijwerkingBox.Text;
 
-                    var Arts = new Arts
+                    var medicijn = new Medicatie
                     {
+                        
                         Naam = Naam ,
-                        Email = Email ,
-                        Adresgegevens = Adresgegevens ,
-                        Telefoon = Telefoon
+                        Beschrijving = Beschrijving ,
+                        Bijwerking = Bijwerkingen
                        
                     };
 
-                    db.Artsen.Add(Arts);
+                    db.Medicijnen.Add(medicijn);
                     db.SaveChanges();
 
-                    var query = from b in db.Artsen
-                                orderby b.ArtsId
+                    var query = from b in db.Medicijnen
+                                orderby b.MedicatieId
                                 select b;
-
                     var Form1 = new Form1();
-                    Form1.dataGridView3.DataSource = query.ToList();
+                    Form1.dataGridView2.DataSource = query.ToList();
                     Hide();
                 }
             }
