@@ -161,5 +161,10 @@ namespace ProjectZorgverzekering
             var MedicatieForm = new Form4();
             MedicatieForm.ShowDialog();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
