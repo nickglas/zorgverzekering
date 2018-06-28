@@ -64,7 +64,7 @@ namespace ProjectZorgverzekering
                     var query = from b in db.Artsen
                                 orderby b.ArtsId
                                 select b;
-                    dataGridView3.DataSource = query.ToList();
+                    dataGridView4.DataSource = query.ToList();
                 }
             }
             catch (Exception error)
@@ -117,7 +117,14 @@ namespace ProjectZorgverzekering
                 dataGridView3.DataSource = query.ToList();
             }
 
-           
+            using (var db = new KlantContext())
+            {
+                var query = from b in db.Contracten
+                            orderby b.Afloopdatum
+                            select b;
+                dataGridView4.DataSource = query.ToList();
+            }
+
         }
 
         private void VerwijderBUTTON_Click(object sender, EventArgs e)
@@ -169,6 +176,17 @@ namespace ProjectZorgverzekering
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var form5 = new Form5();
+            form5.ShowDialog();
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

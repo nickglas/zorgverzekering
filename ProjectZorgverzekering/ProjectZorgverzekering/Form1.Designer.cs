@@ -46,12 +46,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.ContractVerlengenKNOP = new System.Windows.Forms.Button();
             this.ArtsInvoegenKNOP = new System.Windows.Forms.Button();
             this.KlantInvoegenKNOP = new System.Windows.Forms.Button();
             this.VerwijderBUTTON = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.ArtsIDBOX = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,14 +66,14 @@
             this.ArstNaamBOX = new System.Windows.Forms.TextBox();
             this.ArtsContractBOX = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -83,14 +86,13 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(389, 374);
             this.dataGridView1.TabIndex = 0;
-            
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(417, 13);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(389, 374);
+            this.dataGridView2.Size = new System.Drawing.Size(389, 185);
             this.dataGridView2.TabIndex = 1;
             // 
             // groupBox1
@@ -236,6 +238,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.ContractVerlengenKNOP);
             this.groupBox2.Controls.Add(this.ArtsInvoegenKNOP);
@@ -248,11 +251,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acties";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(147, 127);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 96);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Contract Invoegen";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(147, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 95);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Medicatie invoegen";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ContractVerlengenKNOP
             // 
-            this.ContractVerlengenKNOP.Location = new System.Drawing.Point(196, 127);
+            this.ContractVerlengenKNOP.Location = new System.Drawing.Point(244, 127);
             this.ContractVerlengenKNOP.Name = "ContractVerlengenKNOP";
-            this.ContractVerlengenKNOP.Size = new System.Drawing.Size(167, 96);
+            this.ContractVerlengenKNOP.Size = new System.Drawing.Size(119, 96);
             this.ContractVerlengenKNOP.TabIndex = 3;
             this.ContractVerlengenKNOP.Text = "Contract Verlengen";
             this.ContractVerlengenKNOP.UseVisualStyleBackColor = true;
@@ -281,7 +304,7 @@
             // 
             this.VerwijderBUTTON.Location = new System.Drawing.Point(27, 127);
             this.VerwijderBUTTON.Name = "VerwijderBUTTON";
-            this.VerwijderBUTTON.Size = new System.Drawing.Size(163, 96);
+            this.VerwijderBUTTON.Size = new System.Drawing.Size(114, 96);
             this.VerwijderBUTTON.TabIndex = 0;
             this.VerwijderBUTTON.Text = "Verwijderen";
             this.VerwijderBUTTON.UseVisualStyleBackColor = true;
@@ -316,6 +339,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Arts Gegevens";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(351, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "V 1.1";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // button6
             // 
@@ -409,31 +442,21 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Naam";
             // 
-            // button2
+            // dataGridView4
             // 
-            this.button2.Location = new System.Drawing.Point(147, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 95);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Medicatie invoegen";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(351, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "V 1.0";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(417, 205);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(389, 181);
+            this.dataGridView4.TabIndex = 6;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1222, 641);
+            this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.groupBox2);
@@ -452,6 +475,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,6 +518,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridView4;
     }
 }
 

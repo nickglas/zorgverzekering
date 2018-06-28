@@ -25,6 +25,7 @@ namespace ProjectZorgverzekering
             public DbSet<Klant> Klanten { get; set; }
             public DbSet<Arts> Artsen { get; set; }
             public DbSet<Medicatie> Medicijnen { get; set; }
+            public DbSet<Contract> Contracten { get; set; }
         }
 
         public class Arts
@@ -47,7 +48,13 @@ namespace ProjectZorgverzekering
             public string Bijwerking { get; set; }
         }
 
-       
+       public class Contract
+        {
+            public int ContractId { get; set; }
+            public string Dokter { get; set; }
+            public string Functie { get; set; }
+            public DateTime Afloopdatum { get; set; }
+        }
 
     }
 }
