@@ -23,6 +23,8 @@ namespace ProjectZorgverzekering
         public class KlantContext : DbContext
         {
             public DbSet<Klant> Klanten { get; set; }
+            public DbSet<Arts> Artsen { get; set; }
+            public DbSet<Medicatie> Medicijnen { get; set; }
         }
 
         public class Arts
@@ -35,10 +37,7 @@ namespace ProjectZorgverzekering
             public string Telefoon { get; set; }
         }
 
-        public class ArtsContext : DbContext
-        {
-            public DbSet<Arts> Artsen { get; set; }
-        }
+       
 
         public class Medicatie
         {
@@ -48,10 +47,7 @@ namespace ProjectZorgverzekering
             public string Bijwerking { get; set; }
         }
 
-        public class MedicatieContext : DbContext
-        {
-            public DbSet<Medicatie> Medicijnen { get; set; }
-        }
+       
 
     }
 }

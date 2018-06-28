@@ -22,7 +22,7 @@ namespace ProjectZorgverzekering
         {
             try
             {
-                using (var db = new ArtsContext())
+                using (var db = new KlantContext())
                 {
 
                     string Naam = NaamBox.Text;

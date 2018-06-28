@@ -32,7 +32,7 @@ namespace ProjectZorgverzekering
         {
             try
             {
-                using (var db = new MedicatieContext())
+                using (var db = new KlantContext())
                 {
                     string Naam = NaamBox.Text;
                     string Beschrijving = BeschrijvingBox.Text;

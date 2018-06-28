@@ -51,7 +51,7 @@ namespace ProjectZorgverzekering
                     dataGridView1.DataSource = query.ToList();
                 }
 
-                using (var db = new MedicatieContext())
+                using (var db = new KlantContext())
                 {
                     var query = from b in db.Medicijnen
                                 orderby b.MedicatieId
@@ -59,7 +59,7 @@ namespace ProjectZorgverzekering
                     dataGridView3.DataSource = query.ToList();
                 }
 
-                using (var db = new ArtsContext())
+                using (var db = new KlantContext())
                 {
                     var query = from b in db.Artsen
                                 orderby b.ArtsId
@@ -101,7 +101,7 @@ namespace ProjectZorgverzekering
                 dataGridView1.DataSource = query.ToList();
             }
 
-            using (var db = new MedicatieContext())
+            using (var db = new KlantContext())
             {
                 var query = from b in db.Medicijnen
                             orderby b.MedicatieId
@@ -109,7 +109,7 @@ namespace ProjectZorgverzekering
                 dataGridView2.DataSource = query.ToList();
             }
 
-            using (var db = new ArtsContext())
+            using (var db = new KlantContext())
             {
                 var query = from b in db.Artsen
                             orderby b.ArtsId
