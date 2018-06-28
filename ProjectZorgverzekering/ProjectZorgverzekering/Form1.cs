@@ -133,31 +133,138 @@ namespace ProjectZorgverzekering
 
             if (dataGridView1.SelectedRows != null)
             {
-                try
+                if(!RADIOverwijderarts.Checked && !RADIOverwijdercontract.Checked && !RADIOverwijderklant.Checked && !RADIOverwijdermedicijn.Checked)
                 {
-                    if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    MessageBox.Show("Selecteer een item wat u wilt verwijderen");
+                }
+                else
+                {
+                    if (RADIOverwijderarts.Checked)
                     {
-                        //code uitvoeren om te verwijderen
-                        using (var ctx = new KlantContext())
+                        try
                         {
-                            int rowindex = dataGridView1.CurrentCell.RowIndex;
-                            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
-                            var klant = new Klant { KlantId = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[columnindex].Value) };
-                            ctx.Klanten.Attach(klant);
-                            ctx.Klanten.Remove(klant);
-                            ctx.SaveChanges();
+                            if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                //code uitvoeren om te verwijderen
+                                using (var ctx = new KlantContext())
+                                {
+                                    int rowindex = dataGridView3.CurrentCell.RowIndex;
+                                    int columnindex = dataGridView3.CurrentCell.ColumnIndex;
+                                    var arts = new Arts { ArtsId = Convert.ToInt32(dataGridView3.Rows[rowindex].Cells[columnindex].Value) };
+                                    ctx.Artsen.Attach(arts);
+                                    ctx.Artsen.Remove(arts);
+                                    ctx.SaveChanges();
+                                }
+                                MessageBox.Show("Succesvol verwijderd");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Selecteer het id om te verwijderen");
+                            }
                         }
-                        MessageBox.Show("Succesvol verwijderd");
+                        catch (FormatException Ferror)
+                        {
+                            MessageBox.Show("U moet expliciet een id cell selecteren. \n\n\n\n\n" + "De uitgebreide error is : " + Ferror);
+                        }
                     }
-                    else
+
+                    if (RADIOverwijdercontract.Checked)
                     {
-                        MessageBox.Show("Selecteer het id om te verwijderen");
+                        try
+                        {
+                            if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                //code uitvoeren om te verwijderen
+                                using (var ctx = new KlantContext())
+                                {
+                                    int rowindex = dataGridView4.CurrentCell.RowIndex;
+                                    int columnindex = dataGridView4.CurrentCell.ColumnIndex;
+                                    var contract = new Contract { ContractId = Convert.ToInt32(dataGridView4.Rows[rowindex].Cells[columnindex].Value) };
+                                    ctx.Contracten.Attach(contract);
+                                    ctx.Contracten.Remove(contract);
+                                    ctx.SaveChanges();
+                                }
+                                MessageBox.Show("Succesvol verwijderd");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Selecteer het id om te verwijderen");
+                            }
+                        }
+                        catch (FormatException Ferror)
+                        {
+                            MessageBox.Show("U moet expliciet een id cell selecteren. \n\n\n\n\n" + "De uitgebreide error is : " + Ferror);
+
+
+                        }
+                    }
+
+                    if (RADIOverwijderklant.Checked)
+                    {
+                        try
+                        {
+                            if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                //code uitvoeren om te verwijderen
+                                using (var ctx = new KlantContext())
+                                {
+                                    int rowindex = dataGridView1.CurrentCell.RowIndex;
+                                    int columnindex = dataGridView1.CurrentCell.ColumnIndex;
+                                    var klant = new Klant { KlantId = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[columnindex].Value) };
+                                    ctx.Klanten.Attach(klant);
+                                    ctx.Klanten.Remove(klant);
+                                    ctx.SaveChanges();
+                                }
+                                MessageBox.Show("Succesvol verwijderd");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Selecteer het id om te verwijderen");
+                            }
+                        }
+                        catch (FormatException Ferror)
+                        {
+                            MessageBox.Show("U moet expliciet een id cell selecteren. \n\n\n\n\n" + "De uitgebreide error is : " + Ferror);
+
+
+                        }
+                    }
+
+                    if (RADIOverwijdermedicijn.Checked)
+                    {
+                        try
+                        {
+                            if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                //code uitvoeren om te verwijderen
+                                using (var ctx = new KlantContext())
+                                {
+                                    int rowindex = dataGridView2.CurrentCell.RowIndex;
+                                    int columnindex = dataGridView2.CurrentCell.ColumnIndex;
+                                    var medicatie = new Medicatie { MedicatieId = Convert.ToInt32(dataGridView2.Rows[rowindex].Cells[columnindex].Value) };
+                                    ctx.Medicijnen.Attach(medicatie);
+                                    ctx.Medicijnen.Remove(medicatie);
+                                    ctx.SaveChanges();
+                                }
+                                MessageBox.Show("Succesvol verwijderd");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Selecteer het id om te verwijderen");
+                            }
+                        }
+                        catch (FormatException Ferror)
+                        {
+                            MessageBox.Show("U moet expliciet een id cell selecteren. \n\n\n\n\n" + "De uitgebreide error is : " + Ferror);
+
+
+                        }
                     }
                 }
-                catch (FormatException Ferror)
-                {
-                    MessageBox.Show("U moet expliciet een id cell selecteren. \n\n\n\n\n" + "De uitgebreide error is : " + Ferror);
-                }
+
+
+
+               
 
 
 

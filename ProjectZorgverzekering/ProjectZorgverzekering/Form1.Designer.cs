@@ -75,6 +75,17 @@
             this.RADIOadres = new System.Windows.Forms.RadioButton();
             this.RADIOemail = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.contractzoekBox = new System.Windows.Forms.TextBox();
+            this.RADIOfunctiecontract = new System.Windows.Forms.RadioButton();
+            this.label16 = new System.Windows.Forms.Label();
+            this.RADIOidcontract = new System.Windows.Forms.RadioButton();
+            this.RADIOdoktercontract = new System.Windows.Forms.RadioButton();
+            this.medicatiezoekBox = new System.Windows.Forms.TextBox();
+            this.RADIObeschrijvingmedicatie = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.RADIObijwerkingmedicatie = new System.Windows.Forms.RadioButton();
+            this.RADIOidmedicatie = new System.Windows.Forms.RadioButton();
+            this.RADIOnaammedicatie = new System.Windows.Forms.RadioButton();
             this.RADIOemailklant = new System.Windows.Forms.RadioButton();
             this.klantzoekBox = new System.Windows.Forms.TextBox();
             this.RADIOadresklant = new System.Windows.Forms.RadioButton();
@@ -82,17 +93,11 @@
             this.RADIOverzekeringklant = new System.Windows.Forms.RadioButton();
             this.RADIOidklant = new System.Windows.Forms.RadioButton();
             this.RADIOnaamklant = new System.Windows.Forms.RadioButton();
-            this.medicatiezoekBox = new System.Windows.Forms.TextBox();
-            this.RADIObeschrijvingmedicatie = new System.Windows.Forms.RadioButton();
-            this.label15 = new System.Windows.Forms.Label();
-            this.RADIObijwerkingmedicatie = new System.Windows.Forms.RadioButton();
-            this.RADIOidmedicatie = new System.Windows.Forms.RadioButton();
-            this.RADIOnaammedicatie = new System.Windows.Forms.RadioButton();
-            this.contractzoekBox = new System.Windows.Forms.TextBox();
-            this.RADIOfunctiecontract = new System.Windows.Forms.RadioButton();
-            this.label16 = new System.Windows.Forms.Label();
-            this.RADIOidcontract = new System.Windows.Forms.RadioButton();
-            this.RADIOdoktercontract = new System.Windows.Forms.RadioButton();
+            this.RADIOverwijderklant = new System.Windows.Forms.RadioButton();
+            this.RADIOverwijderarts = new System.Windows.Forms.RadioButton();
+            this.RADIOverwijdercontract = new System.Windows.Forms.RadioButton();
+            this.RADIOverwijdermedicijn = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -139,7 +144,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 394);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 278);
+            this.groupBox1.Size = new System.Drawing.Size(322, 305);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Klant Gegevens";
@@ -254,7 +259,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(27, 229);
+            this.button1.Location = new System.Drawing.Point(27, 253);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(336, 40);
             this.button1.TabIndex = 21;
@@ -264,23 +269,28 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.RADIOverwijdermedicijn);
+            this.groupBox2.Controls.Add(this.RADIOverwijdercontract);
+            this.groupBox2.Controls.Add(this.RADIOverwijderarts);
             this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.RADIOverwijderklant);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.ContractVerlengenKNOP);
             this.groupBox2.Controls.Add(this.ArtsInvoegenKNOP);
             this.groupBox2.Controls.Add(this.KlantInvoegenKNOP);
             this.groupBox2.Controls.Add(this.VerwijderBUTTON);
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Location = new System.Drawing.Point(341, 394);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(389, 278);
+            this.groupBox2.Size = new System.Drawing.Size(389, 305);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acties";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(147, 127);
+            this.button3.Location = new System.Drawing.Point(27, 127);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 96);
             this.button3.TabIndex = 5;
@@ -300,9 +310,9 @@
             // 
             // ContractVerlengenKNOP
             // 
-            this.ContractVerlengenKNOP.Location = new System.Drawing.Point(244, 127);
+            this.ContractVerlengenKNOP.Location = new System.Drawing.Point(264, 127);
             this.ContractVerlengenKNOP.Name = "ContractVerlengenKNOP";
-            this.ContractVerlengenKNOP.Size = new System.Drawing.Size(119, 96);
+            this.ContractVerlengenKNOP.Size = new System.Drawing.Size(99, 96);
             this.ContractVerlengenKNOP.TabIndex = 3;
             this.ContractVerlengenKNOP.Text = "Contract Verlengen";
             this.ContractVerlengenKNOP.UseVisualStyleBackColor = true;
@@ -329,9 +339,9 @@
             // 
             // VerwijderBUTTON
             // 
-            this.VerwijderBUTTON.Location = new System.Drawing.Point(27, 127);
+            this.VerwijderBUTTON.Location = new System.Drawing.Point(136, 178);
             this.VerwijderBUTTON.Name = "VerwijderBUTTON";
-            this.VerwijderBUTTON.Size = new System.Drawing.Size(114, 96);
+            this.VerwijderBUTTON.Size = new System.Drawing.Size(114, 65);
             this.VerwijderBUTTON.TabIndex = 0;
             this.VerwijderBUTTON.Text = "Verwijderen";
             this.VerwijderBUTTON.UseVisualStyleBackColor = true;
@@ -360,7 +370,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(1097, 393);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(389, 278);
+            this.groupBox3.Size = new System.Drawing.Size(389, 305);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Arts Gegevens";
@@ -578,10 +588,121 @@
             this.groupBox4.Controls.Add(this.RADIOnaam);
             this.groupBox4.Location = new System.Drawing.Point(737, 394);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(354, 278);
+            this.groupBox4.Size = new System.Drawing.Size(354, 305);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Zoek opties";
+            // 
+            // contractzoekBox
+            // 
+            this.contractzoekBox.Location = new System.Drawing.Point(127, 218);
+            this.contractzoekBox.Name = "contractzoekBox";
+            this.contractzoekBox.Size = new System.Drawing.Size(147, 20);
+            this.contractzoekBox.TabIndex = 54;
+            this.contractzoekBox.TextChanged += new System.EventHandler(this.contractzoekBox_TextChanged);
+            // 
+            // RADIOfunctiecontract
+            // 
+            this.RADIOfunctiecontract.AutoSize = true;
+            this.RADIOfunctiecontract.Location = new System.Drawing.Point(139, 244);
+            this.RADIOfunctiecontract.Name = "RADIOfunctiecontract";
+            this.RADIOfunctiecontract.Size = new System.Drawing.Size(60, 17);
+            this.RADIOfunctiecontract.TabIndex = 59;
+            this.RADIOfunctiecontract.TabStop = true;
+            this.RADIOfunctiecontract.Text = "Functie";
+            this.RADIOfunctiecontract.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(30, 221);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(97, 13);
+            this.label16.TabIndex = 55;
+            this.label16.Text = "Zoek in contracten";
+            // 
+            // RADIOidcontract
+            // 
+            this.RADIOidcontract.AutoSize = true;
+            this.RADIOidcontract.Location = new System.Drawing.Point(36, 244);
+            this.RADIOidcontract.Name = "RADIOidcontract";
+            this.RADIOidcontract.Size = new System.Drawing.Size(34, 17);
+            this.RADIOidcontract.TabIndex = 56;
+            this.RADIOidcontract.TabStop = true;
+            this.RADIOidcontract.Text = "Id";
+            this.RADIOidcontract.UseVisualStyleBackColor = true;
+            // 
+            // RADIOdoktercontract
+            // 
+            this.RADIOdoktercontract.AutoSize = true;
+            this.RADIOdoktercontract.Location = new System.Drawing.Point(80, 244);
+            this.RADIOdoktercontract.Name = "RADIOdoktercontract";
+            this.RADIOdoktercontract.Size = new System.Drawing.Size(57, 17);
+            this.RADIOdoktercontract.TabIndex = 57;
+            this.RADIOdoktercontract.TabStop = true;
+            this.RADIOdoktercontract.Text = "Dokter";
+            this.RADIOdoktercontract.UseVisualStyleBackColor = true;
+            // 
+            // medicatiezoekBox
+            // 
+            this.medicatiezoekBox.Location = new System.Drawing.Point(127, 158);
+            this.medicatiezoekBox.Name = "medicatiezoekBox";
+            this.medicatiezoekBox.Size = new System.Drawing.Size(147, 20);
+            this.medicatiezoekBox.TabIndex = 48;
+            this.medicatiezoekBox.TextChanged += new System.EventHandler(this.medicatiezoekBox_TextChanged);
+            // 
+            // RADIObeschrijvingmedicatie
+            // 
+            this.RADIObeschrijvingmedicatie.AutoSize = true;
+            this.RADIObeschrijvingmedicatie.Location = new System.Drawing.Point(208, 184);
+            this.RADIObeschrijvingmedicatie.Name = "RADIObeschrijvingmedicatie";
+            this.RADIObeschrijvingmedicatie.Size = new System.Drawing.Size(81, 17);
+            this.RADIObeschrijvingmedicatie.TabIndex = 53;
+            this.RADIObeschrijvingmedicatie.TabStop = true;
+            this.RADIObeschrijvingmedicatie.Text = "beschrijving";
+            this.RADIObeschrijvingmedicatie.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(30, 161);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 13);
+            this.label15.TabIndex = 49;
+            this.label15.Text = "Zoek in medicatie";
+            // 
+            // RADIObijwerkingmedicatie
+            // 
+            this.RADIObijwerkingmedicatie.AutoSize = true;
+            this.RADIObijwerkingmedicatie.Location = new System.Drawing.Point(139, 184);
+            this.RADIObijwerkingmedicatie.Name = "RADIObijwerkingmedicatie";
+            this.RADIObijwerkingmedicatie.Size = new System.Drawing.Size(72, 17);
+            this.RADIObijwerkingmedicatie.TabIndex = 52;
+            this.RADIObijwerkingmedicatie.TabStop = true;
+            this.RADIObijwerkingmedicatie.Text = "bijwerking";
+            this.RADIObijwerkingmedicatie.UseVisualStyleBackColor = true;
+            // 
+            // RADIOidmedicatie
+            // 
+            this.RADIOidmedicatie.AutoSize = true;
+            this.RADIOidmedicatie.Location = new System.Drawing.Point(36, 184);
+            this.RADIOidmedicatie.Name = "RADIOidmedicatie";
+            this.RADIOidmedicatie.Size = new System.Drawing.Size(34, 17);
+            this.RADIOidmedicatie.TabIndex = 50;
+            this.RADIOidmedicatie.TabStop = true;
+            this.RADIOidmedicatie.Text = "Id";
+            this.RADIOidmedicatie.UseVisualStyleBackColor = true;
+            // 
+            // RADIOnaammedicatie
+            // 
+            this.RADIOnaammedicatie.AutoSize = true;
+            this.RADIOnaammedicatie.Location = new System.Drawing.Point(80, 184);
+            this.RADIOnaammedicatie.Name = "RADIOnaammedicatie";
+            this.RADIOnaammedicatie.Size = new System.Drawing.Size(53, 17);
+            this.RADIOnaammedicatie.TabIndex = 51;
+            this.RADIOnaammedicatie.TabStop = true;
+            this.RADIOnaammedicatie.Text = "Naam";
+            this.RADIOnaammedicatie.UseVisualStyleBackColor = true;
             // 
             // RADIOemailklant
             // 
@@ -655,116 +776,57 @@
             this.RADIOnaamklant.Text = "Naam";
             this.RADIOnaamklant.UseVisualStyleBackColor = true;
             // 
-            // medicatiezoekBox
+            // RADIOverwijderklant
             // 
-            this.medicatiezoekBox.Location = new System.Drawing.Point(127, 158);
-            this.medicatiezoekBox.Name = "medicatiezoekBox";
-            this.medicatiezoekBox.Size = new System.Drawing.Size(147, 20);
-            this.medicatiezoekBox.TabIndex = 48;
-            this.medicatiezoekBox.TextChanged += new System.EventHandler(this.medicatiezoekBox_TextChanged);
+            this.RADIOverwijderklant.AutoSize = true;
+            this.RADIOverwijderklant.Location = new System.Drawing.Point(136, 138);
+            this.RADIOverwijderklant.Name = "RADIOverwijderklant";
+            this.RADIOverwijderklant.Size = new System.Drawing.Size(49, 17);
+            this.RADIOverwijderklant.TabIndex = 22;
+            this.RADIOverwijderklant.Text = "Klant";
+            this.RADIOverwijderklant.UseVisualStyleBackColor = true;
             // 
-            // RADIObeschrijvingmedicatie
+            // RADIOverwijderarts
             // 
-            this.RADIObeschrijvingmedicatie.AutoSize = true;
-            this.RADIObeschrijvingmedicatie.Location = new System.Drawing.Point(208, 184);
-            this.RADIObeschrijvingmedicatie.Name = "RADIObeschrijvingmedicatie";
-            this.RADIObeschrijvingmedicatie.Size = new System.Drawing.Size(81, 17);
-            this.RADIObeschrijvingmedicatie.TabIndex = 53;
-            this.RADIObeschrijvingmedicatie.TabStop = true;
-            this.RADIObeschrijvingmedicatie.Text = "beschrijving";
-            this.RADIObeschrijvingmedicatie.UseVisualStyleBackColor = true;
+            this.RADIOverwijderarts.AutoSize = true;
+            this.RADIOverwijderarts.Location = new System.Drawing.Point(195, 137);
+            this.RADIOverwijderarts.Name = "RADIOverwijderarts";
+            this.RADIOverwijderarts.Size = new System.Drawing.Size(43, 17);
+            this.RADIOverwijderarts.TabIndex = 23;
+            this.RADIOverwijderarts.TabStop = true;
+            this.RADIOverwijderarts.Text = "Arts";
+            this.RADIOverwijderarts.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // RADIOverwijdercontract
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(30, 161);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 13);
-            this.label15.TabIndex = 49;
-            this.label15.Text = "Zoek in medicatie";
+            this.RADIOverwijdercontract.AutoSize = true;
+            this.RADIOverwijdercontract.Location = new System.Drawing.Point(136, 153);
+            this.RADIOverwijdercontract.Name = "RADIOverwijdercontract";
+            this.RADIOverwijdercontract.Size = new System.Drawing.Size(64, 17);
+            this.RADIOverwijdercontract.TabIndex = 24;
+            this.RADIOverwijdercontract.TabStop = true;
+            this.RADIOverwijdercontract.Text = "contract";
+            this.RADIOverwijdercontract.UseVisualStyleBackColor = true;
             // 
-            // RADIObijwerkingmedicatie
+            // RADIOverwijdermedicijn
             // 
-            this.RADIObijwerkingmedicatie.AutoSize = true;
-            this.RADIObijwerkingmedicatie.Location = new System.Drawing.Point(139, 184);
-            this.RADIObijwerkingmedicatie.Name = "RADIObijwerkingmedicatie";
-            this.RADIObijwerkingmedicatie.Size = new System.Drawing.Size(72, 17);
-            this.RADIObijwerkingmedicatie.TabIndex = 52;
-            this.RADIObijwerkingmedicatie.TabStop = true;
-            this.RADIObijwerkingmedicatie.Text = "bijwerking";
-            this.RADIObijwerkingmedicatie.UseVisualStyleBackColor = true;
+            this.RADIOverwijdermedicijn.AutoSize = true;
+            this.RADIOverwijdermedicijn.Location = new System.Drawing.Point(195, 153);
+            this.RADIOverwijdermedicijn.Name = "RADIOverwijdermedicijn";
+            this.RADIOverwijdermedicijn.Size = new System.Drawing.Size(63, 17);
+            this.RADIOverwijdermedicijn.TabIndex = 25;
+            this.RADIOverwijdermedicijn.TabStop = true;
+            this.RADIOverwijdermedicijn.Text = "medicijn";
+            this.RADIOverwijdermedicijn.UseVisualStyleBackColor = true;
             // 
-            // RADIOidmedicatie
+            // groupBox5
             // 
-            this.RADIOidmedicatie.AutoSize = true;
-            this.RADIOidmedicatie.Location = new System.Drawing.Point(36, 184);
-            this.RADIOidmedicatie.Name = "RADIOidmedicatie";
-            this.RADIOidmedicatie.Size = new System.Drawing.Size(34, 17);
-            this.RADIOidmedicatie.TabIndex = 50;
-            this.RADIOidmedicatie.TabStop = true;
-            this.RADIOidmedicatie.Text = "Id";
-            this.RADIOidmedicatie.UseVisualStyleBackColor = true;
-            // 
-            // RADIOnaammedicatie
-            // 
-            this.RADIOnaammedicatie.AutoSize = true;
-            this.RADIOnaammedicatie.Location = new System.Drawing.Point(80, 184);
-            this.RADIOnaammedicatie.Name = "RADIOnaammedicatie";
-            this.RADIOnaammedicatie.Size = new System.Drawing.Size(53, 17);
-            this.RADIOnaammedicatie.TabIndex = 51;
-            this.RADIOnaammedicatie.TabStop = true;
-            this.RADIOnaammedicatie.Text = "Naam";
-            this.RADIOnaammedicatie.UseVisualStyleBackColor = true;
-            // 
-            // contractzoekBox
-            // 
-            this.contractzoekBox.Location = new System.Drawing.Point(127, 218);
-            this.contractzoekBox.Name = "contractzoekBox";
-            this.contractzoekBox.Size = new System.Drawing.Size(147, 20);
-            this.contractzoekBox.TabIndex = 54;
-            this.contractzoekBox.TextChanged += new System.EventHandler(this.contractzoekBox_TextChanged);
-            // 
-            // RADIOfunctiecontract
-            // 
-            this.RADIOfunctiecontract.AutoSize = true;
-            this.RADIOfunctiecontract.Location = new System.Drawing.Point(139, 244);
-            this.RADIOfunctiecontract.Name = "RADIOfunctiecontract";
-            this.RADIOfunctiecontract.Size = new System.Drawing.Size(60, 17);
-            this.RADIOfunctiecontract.TabIndex = 59;
-            this.RADIOfunctiecontract.TabStop = true;
-            this.RADIOfunctiecontract.Text = "Functie";
-            this.RADIOfunctiecontract.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(30, 221);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(97, 13);
-            this.label16.TabIndex = 55;
-            this.label16.Text = "Zoek in contracten";
-            // 
-            // RADIOidcontract
-            // 
-            this.RADIOidcontract.AutoSize = true;
-            this.RADIOidcontract.Location = new System.Drawing.Point(36, 244);
-            this.RADIOidcontract.Name = "RADIOidcontract";
-            this.RADIOidcontract.Size = new System.Drawing.Size(34, 17);
-            this.RADIOidcontract.TabIndex = 56;
-            this.RADIOidcontract.TabStop = true;
-            this.RADIOidcontract.Text = "Id";
-            this.RADIOidcontract.UseVisualStyleBackColor = true;
-            // 
-            // RADIOdoktercontract
-            // 
-            this.RADIOdoktercontract.AutoSize = true;
-            this.RADIOdoktercontract.Location = new System.Drawing.Point(80, 244);
-            this.RADIOdoktercontract.Name = "RADIOdoktercontract";
-            this.RADIOdoktercontract.Size = new System.Drawing.Size(57, 17);
-            this.RADIOdoktercontract.TabIndex = 57;
-            this.RADIOdoktercontract.TabStop = true;
-            this.RADIOdoktercontract.Text = "Dokter";
-            this.RADIOdoktercontract.UseVisualStyleBackColor = true;
+            this.groupBox5.Location = new System.Drawing.Point(124, 125);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(134, 122);
+            this.groupBox5.TabIndex = 26;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "verwijder menu";
             // 
             // Form1
             // 
@@ -789,6 +851,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -866,6 +929,11 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RadioButton RADIOidcontract;
         private System.Windows.Forms.RadioButton RADIOdoktercontract;
+        private System.Windows.Forms.RadioButton RADIOverwijdermedicijn;
+        private System.Windows.Forms.RadioButton RADIOverwijdercontract;
+        private System.Windows.Forms.RadioButton RADIOverwijderarts;
+        private System.Windows.Forms.RadioButton RADIOverwijderklant;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 
