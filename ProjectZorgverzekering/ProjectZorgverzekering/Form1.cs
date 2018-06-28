@@ -42,6 +42,7 @@ namespace ProjectZorgverzekering
             // TODO: This line of code loads data into the 'databaseDataSet.KLANT' table. You can move, or remove it, as needed.
             try
             {
+                MessageBox.Show("Druk straks op de 'Manual Refresh' knop !");
                 using (var db = new KlantContext())
                 {
 
@@ -189,6 +190,217 @@ namespace ProjectZorgverzekering
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (RADIOadres != null && RADIOemail != null && RADIOid != null && RADIOtelefoon != null && RADIOnaam != null )
+            {
+                if (RADIOid.Checked)
+                {
+                    ArtszoekBox.Text = "";
+                    MessageBox.Show("in onderhoud");
+                    
+
+                }
+
+                if (RADIOadres.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Artsen
+                                    where b.Adresgegevens.Contains(ArtszoekBox.Text)
+                                    select b;
+                        dataGridView3.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIOemail.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Artsen
+                                    where b.Email.Contains(ArtszoekBox.Text)
+                                    select b;
+                        dataGridView3.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIOnaam.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Artsen
+                                    where b.Naam.Contains(ArtszoekBox.Text)
+                                    select b;
+                        dataGridView3.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIOtelefoon.Checked)
+                {
+                    ArtszoekBox.Text = "";
+                    MessageBox.Show("in onderhoud");
+                    
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Selecteer het item waarop u wilt filteren.");
+            }
+
+            
+        }
+
+        private void klantzoekBox_TextChanged(object sender, EventArgs e)
+        {
+            if (RADIOadresklant != null && RADIOemailklant != null && RADIOidklant != null && RADIOverzekeringklant != null && RADIOnaamklant != null)
+            {
+                if (RADIOidklant.Checked)
+                {
+                    ArtszoekBox.Text = "";
+                    MessageBox.Show("in onderhoud");
+
+
+                }
+
+                if (RADIOadresklant.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Klanten
+                                    where b.Adresgegevens.Contains(klantzoekBox.Text)
+                                    select b;
+                        dataGridView1.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIOemailklant.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Klanten
+                                    where b.Email.Contains(klantzoekBox.Text)
+                                    select b;
+                        dataGridView1.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIOnaamklant.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Klanten
+                                    where b.Naam.Contains(klantzoekBox.Text)
+                                    select b;
+                        dataGridView1.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIOverzekeringklant.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Klanten
+                                    where b.Verzekering.Contains(klantzoekBox.Text)
+                                    select b;
+                        dataGridView1.DataSource = query.ToList();
+                    }
+
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Selecteer het item waarop u wilt filteren.");
+            }
+        }
+
+        private void medicatiezoekBox_TextChanged(object sender, EventArgs e)
+        {
+           
+                if (RADIOidmedicatie.Checked)
+                {
+                    ArtszoekBox.Text = "";
+                    MessageBox.Show("in onderhoud");
+
+
+                }
+
+                if (RADIOnaammedicatie.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Medicijnen
+                                    where b.Naam.Contains(medicatiezoekBox.Text)
+                                    select b;
+                        dataGridView2.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIObeschrijvingmedicatie.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Medicijnen
+                                    where b.Beschrijving.Contains(medicatiezoekBox.Text)
+                                    select b;
+                        dataGridView2.DataSource = query.ToList();
+                    }
+                }
+
+                if (RADIObijwerkingmedicatie.Checked)
+                {
+                    using (var db = new KlantContext())
+                    {
+                        var query = from b in db.Medicijnen
+                                    where b.Bijwerking.Contains(medicatiezoekBox.Text)
+                                    select b;
+                        dataGridView2.DataSource = query.ToList();
+                    }
+                }
+
+
+            
+            
+        }
+
+        private void contractzoekBox_TextChanged(object sender, EventArgs e)
+        {
+            if (RADIOidcontract.Checked)
+            {
+                ArtszoekBox.Text = "";
+                MessageBox.Show("in onderhoud");
+
+
+            }
+
+            if (RADIOdoktercontract.Checked)
+            {
+                using (var db = new KlantContext())
+                {
+                    var query = from b in db.Contracten
+                                where b.Dokter.Contains(contractzoekBox.Text)
+                                select b;
+                    dataGridView4.DataSource = query.ToList();
+                }
+            }
+
+            if (RADIOfunctiecontract.Checked)
+            {
+                using (var db = new KlantContext())
+                {
+                    var query = from b in db.Contracten
+                                where b.Functie.Contains(contractzoekBox.Text)
+                                select b;
+                    dataGridView4.DataSource = query.ToList();
+                }
+            }
+
+            
         }
     }
 }
