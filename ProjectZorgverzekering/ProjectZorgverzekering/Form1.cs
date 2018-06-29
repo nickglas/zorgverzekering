@@ -592,5 +592,31 @@ namespace ProjectZorgverzekering
             sc.Send(msg);
             MessageBox.Show("Contract is verlengd en mail is verzonden");
         }
+
+        Klant currentprintKlant;
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            int rows = dataGridView1.SelectedCells.Count;
+            MessageBox.Show(rows.ToString());
+            List<Print> printen = new List<Print>();
+            
+                currentprintKlant = (Klant)dataGridView1.CurrentRow.DataBoundItem;
+                currentprintKlant.Naam = currentprintKlant.Naam.ToString();
+                currentprintKlant.Adresgegevens = currentprintKlant.Adresgegevens.ToString();
+                string naam = currentprintKlant.Naam;
+                string adres = currentprintKlant.Adresgegevens;
+
+                
+
+
+
+
+
+
+
+
+
+        }
     }
 }

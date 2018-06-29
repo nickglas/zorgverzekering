@@ -63,6 +63,18 @@ namespace ProjectZorgverzekering
             public string EmailAdres { get; set; }
         }
 
+        public class Print
+        {
+            public string Naam;
+            public string Adres;
+            
+            public Print(string naam , string adres)
+            {
+                this.Naam = naam;
+                this.Adres = adres;
+            }
+
+        }
     }
 }
 
