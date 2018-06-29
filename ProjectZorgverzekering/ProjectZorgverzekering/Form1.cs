@@ -176,10 +176,10 @@ namespace ProjectZorgverzekering
 
                                 int rowindex = dataGridView4.CurrentCell.RowIndex;
                                 int columnindex = dataGridView4.CurrentCell.ColumnIndex;
-                                int contractId = Convert.ToInt32(dataGridView4.Rows[rowindex].Cells[columnindex].Value);
+                                int contractid = Convert.ToInt32(dataGridView4.Rows[rowindex].Cells[columnindex].Value);
 
 
-                                var contract = db.Contracten.Find(contractId);
+                                var contract = db.Contracten.Find(contractid);
                                 db.Contracten.Remove(contract);
 
                                 db.SaveChanges();
@@ -206,12 +206,15 @@ namespace ProjectZorgverzekering
                             if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 //code uitvoeren om te verwijderen
-
+                                
                                 int rowindex = dataGridView1.CurrentCell.RowIndex;
                                 int columnindex = dataGridView1.CurrentCell.ColumnIndex;
-                                var klant = new Klant { KlantId = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[columnindex].Value) };
-                                db.Klanten.Attach(klant);
+                                int klantid = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[columnindex].Value);
+
+
+                                var klant = db.Klanten.Find(klantid);
                                 db.Klanten.Remove(klant);
+
                                 db.SaveChanges();
 
                                 MessageBox.Show("Succesvol verwijderd");
@@ -239,9 +242,12 @@ namespace ProjectZorgverzekering
 
                                 int rowindex = dataGridView2.CurrentCell.RowIndex;
                                 int columnindex = dataGridView2.CurrentCell.ColumnIndex;
-                                var medicatie = new Medicatie { MedicatieId = Convert.ToInt32(dataGridView2.Rows[rowindex].Cells[columnindex].Value) };
-                                db.Medicijnen.Attach(medicatie);
+                                int medicatieid = Convert.ToInt32(dataGridView2.Rows[rowindex].Cells[columnindex].Value);
+
+
+                                var medicatie = db.Medicijnen.Find(medicatieid);
                                 db.Medicijnen.Remove(medicatie);
+
                                 db.SaveChanges();
 
                                 MessageBox.Show("Succesvol verwijderd");
