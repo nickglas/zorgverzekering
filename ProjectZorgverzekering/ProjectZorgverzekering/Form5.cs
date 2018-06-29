@@ -28,6 +28,7 @@ namespace ProjectZorgverzekering
                 {
                     string artsbox = ArtsBox.Text;
                     string functie = FunctieBox.Text;
+                    string email = EmailBox.Text;
                     DateTime aflooptdatum = dateTimePicker1.Value.Date;
 
 
@@ -36,8 +37,8 @@ namespace ProjectZorgverzekering
                     {
                        Dokter = artsbox ,
                        Functie = functie ,
-                       Afloopdatum = aflooptdatum
-
+                       Afloopdatum = aflooptdatum,
+                       Email = email
                     };
 
                     db.Contracten.Add(contract);

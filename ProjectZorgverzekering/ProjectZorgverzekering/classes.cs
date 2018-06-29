@@ -53,7 +53,14 @@ namespace ProjectZorgverzekering
             public int ContractId { get; set; }
             public string Dokter { get; set; }
             public string Functie { get; set; }
+            public string Email { get; set; }
             public DateTime Afloopdatum { get; set; }
+        }
+
+        public class Email
+        {
+            public int EmailId { get; set; }
+            public string EmailAdres { get; set; }
         }
 
     }

@@ -35,6 +35,8 @@
             this.FunctieBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +57,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(40, 93);
+            this.dateTimePicker1.Location = new System.Drawing.Point(36, 105);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(188, 20);
             this.dateTimePicker1.TabIndex = 2;
@@ -89,17 +91,35 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(96, 77);
+            this.label3.Location = new System.Drawing.Point(92, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ingang datum";
+            // 
+            // EmailBox
+            // 
+            this.EmailBox.Location = new System.Drawing.Point(54, 64);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(174, 20);
+            this.EmailBox.TabIndex = 8;
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Location = new System.Drawing.Point(13, 65);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(32, 13);
+            this.Email.TabIndex = 7;
+            this.Email.Text = "Email";
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(248, 237);
+            this.Controls.Add(this.EmailBox);
+            this.Controls.Add(this.Email);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.FunctieBox);
             this.Controls.Add(this.label2);
@@ -123,5 +143,7 @@
         private System.Windows.Forms.TextBox FunctieBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox EmailBox;
+        private System.Windows.Forms.Label Email;
     }
 }

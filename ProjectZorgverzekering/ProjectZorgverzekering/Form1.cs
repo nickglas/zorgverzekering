@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
+using System.Net;
+using System.Net.Mail;
 using static ProjectZorgverzekering.Classes;
 
 namespace ProjectZorgverzekering
@@ -529,7 +531,13 @@ namespace ProjectZorgverzekering
             //currentArts.Verzekering = ZorgverzekeringBOX.Text.ToString();
             currentArts.Adresgegevens = ArtsAdresBOX.Text.ToString();
             currentArts.Email = ArtsEmailBOX.Text.ToString();
+            db.SaveChanges();
 
+
+            var query = from b in db.Artsen
+                        orderby b.ArtsId
+                        select b;
+            dataGridView3.DataSource = query.ToList();
             db.SaveChanges();
         }
 
@@ -564,12 +572,25 @@ namespace ProjectZorgverzekering
 
             currentContract = (Contract)dataGridView4.CurrentRow.DataBoundItem;
             currentContract.Afloopdatum = currentContract.Afloopdatum.AddYears(1);
-            db.SaveChanges();
             var query3 = from b in db.Contracten
                          orderby b.Afloopdatum
                          select b;
             dataGridView4.DataSource = query3.ToList();
 
+            db.SaveChanges();
+
+            currentContract = (Contract)dataGridView4.CurrentRow.DataBoundItem;
+            currentContract.Email = currentContract.Email.ToString();
+
+            MailMessage msg = new MailMessage("horizonverzekeringen@gmail.com", currentContract.Email.ToString(), "Contract verlenging", "Uw contract is met een jaar verlengt");
+            msg.IsBodyHtml = true;
+            SmtpClient sc = new SmtpClient("smtp.gmail.com" , 587);
+            sc.UseDefaultCredentials = false;
+            NetworkCredential cre = new NetworkCredential("horizonverzekeringen@gmail.com", "Weetikniet1");
+            sc.Credentials = cre;
+            sc.EnableSsl = true;
+            sc.Send(msg);
+            MessageBox.Show("Contract is verlengd en mail is verzonden");
         }
     }
 }
