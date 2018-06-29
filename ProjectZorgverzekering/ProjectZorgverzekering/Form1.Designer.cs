@@ -114,7 +114,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(684, 460);
@@ -125,7 +125,7 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(740, 15);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(608, 228);
             this.dataGridView2.TabIndex = 1;
@@ -146,9 +146,9 @@
             this.groupBox1.Controls.Add(this.klantid);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(17, 485);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(429, 375);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -158,7 +158,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(147, 293);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(183, 28);
             this.button5.TabIndex = 20;
@@ -169,7 +169,7 @@
             // EmailBOX
             // 
             this.EmailBOX.Location = new System.Drawing.Point(219, 203);
-            this.EmailBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailBOX.Margin = new System.Windows.Forms.Padding(4);
             this.EmailBOX.Name = "EmailBOX";
             this.EmailBOX.Size = new System.Drawing.Size(180, 22);
             this.EmailBOX.TabIndex = 17;
@@ -187,7 +187,7 @@
             // AdresBOX
             // 
             this.AdresBOX.Location = new System.Drawing.Point(219, 171);
-            this.AdresBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdresBOX.Margin = new System.Windows.Forms.Padding(4);
             this.AdresBOX.Name = "AdresBOX";
             this.AdresBOX.Size = new System.Drawing.Size(180, 22);
             this.AdresBOX.TabIndex = 15;
@@ -205,7 +205,7 @@
             // NaamBOX
             // 
             this.NaamBOX.Location = new System.Drawing.Point(219, 139);
-            this.NaamBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NaamBOX.Margin = new System.Windows.Forms.Padding(4);
             this.NaamBOX.Name = "NaamBOX";
             this.NaamBOX.Size = new System.Drawing.Size(180, 22);
             this.NaamBOX.TabIndex = 13;
@@ -223,7 +223,7 @@
             // ZorgverzekeringBOX
             // 
             this.ZorgverzekeringBOX.Location = new System.Drawing.Point(219, 107);
-            this.ZorgverzekeringBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ZorgverzekeringBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ZorgverzekeringBOX.Name = "ZorgverzekeringBOX";
             this.ZorgverzekeringBOX.Size = new System.Drawing.Size(180, 22);
             this.ZorgverzekeringBOX.TabIndex = 11;
@@ -242,7 +242,7 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(219, 75);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(180, 22);
             this.textBox2.TabIndex = 9;
@@ -261,7 +261,7 @@
             // 
             this.klantid.Enabled = false;
             this.klantid.Location = new System.Drawing.Point(219, 43);
-            this.klantid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.klantid.Margin = new System.Windows.Forms.Padding(4);
             this.klantid.Name = "klantid";
             this.klantid.Size = new System.Drawing.Size(180, 22);
             this.klantid.TabIndex = 7;
@@ -279,7 +279,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(36, 311);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(448, 49);
             this.button1.TabIndex = 21;
@@ -302,9 +302,9 @@
             this.groupBox2.Controls.Add(this.VerwijderBUTTON);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Location = new System.Drawing.Point(455, 485);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(519, 375);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -314,7 +314,7 @@
             // 
             this.RADIOverwijdermedicijn.AutoSize = true;
             this.RADIOverwijdermedicijn.Location = new System.Drawing.Point(260, 188);
-            this.RADIOverwijdermedicijn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOverwijdermedicijn.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOverwijdermedicijn.Name = "RADIOverwijdermedicijn";
             this.RADIOverwijdermedicijn.Size = new System.Drawing.Size(80, 21);
             this.RADIOverwijdermedicijn.TabIndex = 25;
@@ -326,7 +326,7 @@
             // 
             this.RADIOverwijdercontract.AutoSize = true;
             this.RADIOverwijdercontract.Location = new System.Drawing.Point(181, 188);
-            this.RADIOverwijdercontract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOverwijdercontract.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOverwijdercontract.Name = "RADIOverwijdercontract";
             this.RADIOverwijdercontract.Size = new System.Drawing.Size(80, 21);
             this.RADIOverwijdercontract.TabIndex = 24;
@@ -338,7 +338,7 @@
             // 
             this.RADIOverwijderarts.AutoSize = true;
             this.RADIOverwijderarts.Location = new System.Drawing.Point(260, 169);
-            this.RADIOverwijderarts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOverwijderarts.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOverwijderarts.Name = "RADIOverwijderarts";
             this.RADIOverwijderarts.Size = new System.Drawing.Size(54, 21);
             this.RADIOverwijderarts.TabIndex = 23;
@@ -350,7 +350,7 @@
             // 
             this.RADIOverwijderklant.AutoSize = true;
             this.RADIOverwijderklant.Location = new System.Drawing.Point(181, 170);
-            this.RADIOverwijderklant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOverwijderklant.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOverwijderklant.Name = "RADIOverwijderklant";
             this.RADIOverwijderklant.Size = new System.Drawing.Size(61, 21);
             this.RADIOverwijderklant.TabIndex = 22;
@@ -360,7 +360,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(36, 156);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 118);
             this.button3.TabIndex = 5;
@@ -371,7 +371,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(196, 28);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 117);
             this.button2.TabIndex = 4;
@@ -382,17 +382,18 @@
             // ContractVerlengenKNOP
             // 
             this.ContractVerlengenKNOP.Location = new System.Drawing.Point(352, 156);
-            this.ContractVerlengenKNOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContractVerlengenKNOP.Margin = new System.Windows.Forms.Padding(4);
             this.ContractVerlengenKNOP.Name = "ContractVerlengenKNOP";
             this.ContractVerlengenKNOP.Size = new System.Drawing.Size(132, 118);
             this.ContractVerlengenKNOP.TabIndex = 3;
             this.ContractVerlengenKNOP.Text = "Contract Verlengen";
             this.ContractVerlengenKNOP.UseVisualStyleBackColor = true;
+            this.ContractVerlengenKNOP.Click += new System.EventHandler(this.ContractVerlengenKNOP_Click);
             // 
             // ArtsInvoegenKNOP
             // 
             this.ArtsInvoegenKNOP.Location = new System.Drawing.Point(325, 28);
-            this.ArtsInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsInvoegenKNOP.Name = "ArtsInvoegenKNOP";
             this.ArtsInvoegenKNOP.Size = new System.Drawing.Size(159, 118);
             this.ArtsInvoegenKNOP.TabIndex = 2;
@@ -403,7 +404,7 @@
             // KlantInvoegenKNOP
             // 
             this.KlantInvoegenKNOP.Location = new System.Drawing.Point(36, 28);
-            this.KlantInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KlantInvoegenKNOP.Margin = new System.Windows.Forms.Padding(4);
             this.KlantInvoegenKNOP.Name = "KlantInvoegenKNOP";
             this.KlantInvoegenKNOP.Size = new System.Drawing.Size(152, 118);
             this.KlantInvoegenKNOP.TabIndex = 1;
@@ -414,7 +415,7 @@
             // VerwijderBUTTON
             // 
             this.VerwijderBUTTON.Location = new System.Drawing.Point(181, 219);
-            this.VerwijderBUTTON.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.VerwijderBUTTON.Margin = new System.Windows.Forms.Padding(4);
             this.VerwijderBUTTON.Name = "VerwijderBUTTON";
             this.VerwijderBUTTON.Size = new System.Drawing.Size(152, 80);
             this.VerwijderBUTTON.TabIndex = 0;
@@ -425,9 +426,9 @@
             // groupBox5
             // 
             this.groupBox5.Location = new System.Drawing.Point(165, 154);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(179, 150);
             this.groupBox5.TabIndex = 26;
             this.groupBox5.TabStop = false;
@@ -437,7 +438,7 @@
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(1381, 15);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(600, 460);
             this.dataGridView3.TabIndex = 4;
@@ -457,9 +458,9 @@
             this.groupBox3.Controls.Add(this.ArtsContractBOX);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(1463, 484);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(519, 375);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -469,7 +470,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(216, 196);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(193, 28);
             this.button6.TabIndex = 33;
@@ -481,7 +482,7 @@
             // 
             this.ArtsIDBOX.Enabled = false;
             this.ArtsIDBOX.Location = new System.Drawing.Point(216, 30);
-            this.ArtsIDBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsIDBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsIDBOX.Name = "ArtsIDBOX";
             this.ArtsIDBOX.Size = new System.Drawing.Size(192, 22);
             this.ArtsIDBOX.TabIndex = 22;
@@ -510,7 +511,7 @@
             // ArtsAdresBOX
             // 
             this.ArtsAdresBOX.Location = new System.Drawing.Point(216, 158);
-            this.ArtsAdresBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsAdresBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsAdresBOX.Name = "ArtsAdresBOX";
             this.ArtsAdresBOX.Size = new System.Drawing.Size(192, 22);
             this.ArtsAdresBOX.TabIndex = 30;
@@ -518,7 +519,7 @@
             // ArtsEmailBOX
             // 
             this.ArtsEmailBOX.Location = new System.Drawing.Point(216, 92);
-            this.ArtsEmailBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsEmailBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsEmailBOX.Name = "ArtsEmailBOX";
             this.ArtsEmailBOX.Size = new System.Drawing.Size(192, 22);
             this.ArtsEmailBOX.TabIndex = 24;
@@ -546,7 +547,7 @@
             // ArstNaamBOX
             // 
             this.ArstNaamBOX.Location = new System.Drawing.Point(216, 126);
-            this.ArstNaamBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArstNaamBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArstNaamBOX.Name = "ArstNaamBOX";
             this.ArstNaamBOX.Size = new System.Drawing.Size(192, 22);
             this.ArstNaamBOX.TabIndex = 28;
@@ -556,7 +557,7 @@
             // 
             this.ArtsContractBOX.Enabled = false;
             this.ArtsContractBOX.Location = new System.Drawing.Point(216, 63);
-            this.ArtsContractBOX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtsContractBOX.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsContractBOX.Name = "ArtsContractBOX";
             this.ArtsContractBOX.Size = new System.Drawing.Size(192, 22);
             this.ArtsContractBOX.TabIndex = 26;
@@ -586,7 +587,7 @@
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(740, 251);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(608, 223);
             this.dataGridView4.TabIndex = 6;
@@ -595,7 +596,7 @@
             // ArtszoekBox
             // 
             this.ArtszoekBox.Location = new System.Drawing.Point(169, 38);
-            this.ArtszoekBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtszoekBox.Margin = new System.Windows.Forms.Padding(4);
             this.ArtszoekBox.Name = "ArtszoekBox";
             this.ArtszoekBox.Size = new System.Drawing.Size(195, 22);
             this.ArtszoekBox.TabIndex = 34;
@@ -615,7 +616,7 @@
             // 
             this.RADIOid.AutoSize = true;
             this.RADIOid.Location = new System.Drawing.Point(48, 70);
-            this.RADIOid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOid.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOid.Name = "RADIOid";
             this.RADIOid.Size = new System.Drawing.Size(40, 21);
             this.RADIOid.TabIndex = 36;
@@ -627,7 +628,7 @@
             // 
             this.RADIOnaam.AutoSize = true;
             this.RADIOnaam.Location = new System.Drawing.Point(107, 70);
-            this.RADIOnaam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOnaam.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOnaam.Name = "RADIOnaam";
             this.RADIOnaam.Size = new System.Drawing.Size(66, 21);
             this.RADIOnaam.TabIndex = 37;
@@ -639,7 +640,7 @@
             // 
             this.RADIOtelefoon.AutoSize = true;
             this.RADIOtelefoon.Location = new System.Drawing.Point(263, 70);
-            this.RADIOtelefoon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOtelefoon.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOtelefoon.Name = "RADIOtelefoon";
             this.RADIOtelefoon.Size = new System.Drawing.Size(85, 21);
             this.RADIOtelefoon.TabIndex = 38;
@@ -651,7 +652,7 @@
             // 
             this.RADIOadres.AutoSize = true;
             this.RADIOadres.Location = new System.Drawing.Point(185, 70);
-            this.RADIOadres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOadres.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOadres.Name = "RADIOadres";
             this.RADIOadres.Size = new System.Drawing.Size(66, 21);
             this.RADIOadres.TabIndex = 39;
@@ -663,7 +664,7 @@
             // 
             this.RADIOemail.AutoSize = true;
             this.RADIOemail.Location = new System.Drawing.Point(361, 70);
-            this.RADIOemail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOemail.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOemail.Name = "RADIOemail";
             this.RADIOemail.Size = new System.Drawing.Size(63, 21);
             this.RADIOemail.TabIndex = 40;
@@ -699,9 +700,9 @@
             this.groupBox4.Controls.Add(this.RADIOid);
             this.groupBox4.Controls.Add(this.RADIOnaam);
             this.groupBox4.Location = new System.Drawing.Point(983, 485);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(472, 375);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
@@ -710,7 +711,7 @@
             // contractzoekBox
             // 
             this.contractzoekBox.Location = new System.Drawing.Point(169, 268);
-            this.contractzoekBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contractzoekBox.Margin = new System.Windows.Forms.Padding(4);
             this.contractzoekBox.Name = "contractzoekBox";
             this.contractzoekBox.Size = new System.Drawing.Size(195, 22);
             this.contractzoekBox.TabIndex = 54;
@@ -720,7 +721,7 @@
             // 
             this.RADIOfunctiecontract.AutoSize = true;
             this.RADIOfunctiecontract.Location = new System.Drawing.Point(185, 300);
-            this.RADIOfunctiecontract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOfunctiecontract.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOfunctiecontract.Name = "RADIOfunctiecontract";
             this.RADIOfunctiecontract.Size = new System.Drawing.Size(75, 21);
             this.RADIOfunctiecontract.TabIndex = 59;
@@ -742,7 +743,7 @@
             // 
             this.RADIOidcontract.AutoSize = true;
             this.RADIOidcontract.Location = new System.Drawing.Point(48, 300);
-            this.RADIOidcontract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOidcontract.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOidcontract.Name = "RADIOidcontract";
             this.RADIOidcontract.Size = new System.Drawing.Size(40, 21);
             this.RADIOidcontract.TabIndex = 56;
@@ -754,7 +755,7 @@
             // 
             this.RADIOdoktercontract.AutoSize = true;
             this.RADIOdoktercontract.Location = new System.Drawing.Point(107, 300);
-            this.RADIOdoktercontract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOdoktercontract.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOdoktercontract.Name = "RADIOdoktercontract";
             this.RADIOdoktercontract.Size = new System.Drawing.Size(71, 21);
             this.RADIOdoktercontract.TabIndex = 57;
@@ -765,7 +766,7 @@
             // medicatiezoekBox
             // 
             this.medicatiezoekBox.Location = new System.Drawing.Point(169, 194);
-            this.medicatiezoekBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.medicatiezoekBox.Margin = new System.Windows.Forms.Padding(4);
             this.medicatiezoekBox.Name = "medicatiezoekBox";
             this.medicatiezoekBox.Size = new System.Drawing.Size(195, 22);
             this.medicatiezoekBox.TabIndex = 48;
@@ -775,7 +776,7 @@
             // 
             this.RADIObeschrijvingmedicatie.AutoSize = true;
             this.RADIObeschrijvingmedicatie.Location = new System.Drawing.Point(277, 226);
-            this.RADIObeschrijvingmedicatie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIObeschrijvingmedicatie.Margin = new System.Windows.Forms.Padding(4);
             this.RADIObeschrijvingmedicatie.Name = "RADIObeschrijvingmedicatie";
             this.RADIObeschrijvingmedicatie.Size = new System.Drawing.Size(104, 21);
             this.RADIObeschrijvingmedicatie.TabIndex = 53;
@@ -797,7 +798,7 @@
             // 
             this.RADIObijwerkingmedicatie.AutoSize = true;
             this.RADIObijwerkingmedicatie.Location = new System.Drawing.Point(185, 226);
-            this.RADIObijwerkingmedicatie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIObijwerkingmedicatie.Margin = new System.Windows.Forms.Padding(4);
             this.RADIObijwerkingmedicatie.Name = "RADIObijwerkingmedicatie";
             this.RADIObijwerkingmedicatie.Size = new System.Drawing.Size(91, 21);
             this.RADIObijwerkingmedicatie.TabIndex = 52;
@@ -809,7 +810,7 @@
             // 
             this.RADIOidmedicatie.AutoSize = true;
             this.RADIOidmedicatie.Location = new System.Drawing.Point(48, 226);
-            this.RADIOidmedicatie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOidmedicatie.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOidmedicatie.Name = "RADIOidmedicatie";
             this.RADIOidmedicatie.Size = new System.Drawing.Size(40, 21);
             this.RADIOidmedicatie.TabIndex = 50;
@@ -821,7 +822,7 @@
             // 
             this.RADIOnaammedicatie.AutoSize = true;
             this.RADIOnaammedicatie.Location = new System.Drawing.Point(107, 226);
-            this.RADIOnaammedicatie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOnaammedicatie.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOnaammedicatie.Name = "RADIOnaammedicatie";
             this.RADIOnaammedicatie.Size = new System.Drawing.Size(66, 21);
             this.RADIOnaammedicatie.TabIndex = 51;
@@ -833,7 +834,7 @@
             // 
             this.RADIOemailklant.AutoSize = true;
             this.RADIOemailklant.Location = new System.Drawing.Point(263, 153);
-            this.RADIOemailklant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOemailklant.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOemailklant.Name = "RADIOemailklant";
             this.RADIOemailklant.Size = new System.Drawing.Size(63, 21);
             this.RADIOemailklant.TabIndex = 47;
@@ -844,7 +845,7 @@
             // klantzoekBox
             // 
             this.klantzoekBox.Location = new System.Drawing.Point(169, 121);
-            this.klantzoekBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.klantzoekBox.Margin = new System.Windows.Forms.Padding(4);
             this.klantzoekBox.Name = "klantzoekBox";
             this.klantzoekBox.Size = new System.Drawing.Size(195, 22);
             this.klantzoekBox.TabIndex = 41;
@@ -854,7 +855,7 @@
             // 
             this.RADIOadresklant.AutoSize = true;
             this.RADIOadresklant.Location = new System.Drawing.Point(185, 153);
-            this.RADIOadresklant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOadresklant.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOadresklant.Name = "RADIOadresklant";
             this.RADIOadresklant.Size = new System.Drawing.Size(66, 21);
             this.RADIOadresklant.TabIndex = 46;
@@ -876,7 +877,7 @@
             // 
             this.RADIOverzekeringklant.AutoSize = true;
             this.RADIOverzekeringklant.Location = new System.Drawing.Point(361, 153);
-            this.RADIOverzekeringklant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOverzekeringklant.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOverzekeringklant.Name = "RADIOverzekeringklant";
             this.RADIOverzekeringklant.Size = new System.Drawing.Size(105, 21);
             this.RADIOverzekeringklant.TabIndex = 45;
@@ -888,7 +889,7 @@
             // 
             this.RADIOidklant.AutoSize = true;
             this.RADIOidklant.Location = new System.Drawing.Point(48, 153);
-            this.RADIOidklant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOidklant.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOidklant.Name = "RADIOidklant";
             this.RADIOidklant.Size = new System.Drawing.Size(40, 21);
             this.RADIOidklant.TabIndex = 43;
@@ -900,7 +901,7 @@
             // 
             this.RADIOnaamklant.AutoSize = true;
             this.RADIOnaamklant.Location = new System.Drawing.Point(107, 153);
-            this.RADIOnaamklant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RADIOnaamklant.Margin = new System.Windows.Forms.Padding(4);
             this.RADIOnaamklant.Name = "RADIOnaamklant";
             this.RADIOnaamklant.Size = new System.Drawing.Size(66, 21);
             this.RADIOnaamklant.TabIndex = 44;
@@ -923,7 +924,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "ZorgVerzekering Applicatie";
             this.Load += new System.EventHandler(this.Form1_Load);

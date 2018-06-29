@@ -9,15 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using static ProjectZorgverzekering.Classes;
-using System.Drawing.Imaging;
-using System.Drawing.Printing;
 
 namespace ProjectZorgverzekering
 {
     public partial class Form1 : Form
     {
         KlantContext db = new KlantContext();
-        
 
 
         public Form1()
@@ -97,37 +94,33 @@ namespace ProjectZorgverzekering
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var db = new KlantContext())
-            {
+            
                 var query = from b in db.Klanten
                             orderby b.KlantId
                             select b;
                 dataGridView1.DataSource = query.ToList();
-            }
+            
 
-            using (var db = new KlantContext())
-            {
-                var query = from b in db.Medicijnen
+            
+                var query1 = from b in db.Medicijnen
                             orderby b.MedicatieId
                             select b;
-                dataGridView2.DataSource = query.ToList();
-            }
+                dataGridView2.DataSource = query1.ToList();
+            
 
-            using (var db = new KlantContext())
-            {
-                var query = from b in db.Artsen
+            
+                var query2 = from b in db.Artsen
                             orderby b.ArtsId
                             select b;
-                dataGridView3.DataSource = query.ToList();
-            }
+                dataGridView3.DataSource = query2.ToList();
+            
 
-            using (var db = new KlantContext())
-            {
-                var query = from b in db.Contracten
+            
+                var query3 = from b in db.Contracten
                             orderby b.Afloopdatum
                             select b;
-                dataGridView4.DataSource = query.ToList();
-            }
+                dataGridView4.DataSource = query3.ToList();
+            
 
         }
 
@@ -265,18 +258,6 @@ namespace ProjectZorgverzekering
                     }
                 }
 
-
-
-               
-
-
-
-
-
-
-
-
-
             }          
         }
 
@@ -316,35 +297,32 @@ namespace ProjectZorgverzekering
 
                 if (RADIOadres.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Artsen
                                     where b.Adresgegevens.Contains(ArtszoekBox.Text)
                                     select b;
                         dataGridView3.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIOemail.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Artsen
                                     where b.Email.Contains(ArtszoekBox.Text)
                                     select b;
                         dataGridView3.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIOnaam.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Artsen
                                     where b.Naam.Contains(ArtszoekBox.Text)
                                     select b;
                         dataGridView3.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIOtelefoon.Checked)
@@ -378,46 +356,42 @@ namespace ProjectZorgverzekering
 
                 if (RADIOadresklant.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Klanten
                                     where b.Adresgegevens.Contains(klantzoekBox.Text)
                                     select b;
                         dataGridView1.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIOemailklant.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Klanten
                                     where b.Email.Contains(klantzoekBox.Text)
                                     select b;
                         dataGridView1.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIOnaamklant.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Klanten
                                     where b.Naam.Contains(klantzoekBox.Text)
                                     select b;
                         dataGridView1.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIOverzekeringklant.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Klanten
                                     where b.Verzekering.Contains(klantzoekBox.Text)
                                     select b;
                         dataGridView1.DataSource = query.ToList();
-                    }
+                    
 
                 }
 
@@ -442,35 +416,32 @@ namespace ProjectZorgverzekering
 
                 if (RADIOnaammedicatie.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                   
                         var query = from b in db.Medicijnen
                                     where b.Naam.Contains(medicatiezoekBox.Text)
                                     select b;
                         dataGridView2.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIObeschrijvingmedicatie.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Medicijnen
                                     where b.Beschrijving.Contains(medicatiezoekBox.Text)
                                     select b;
                         dataGridView2.DataSource = query.ToList();
-                    }
+                    
                 }
 
                 if (RADIObijwerkingmedicatie.Checked)
                 {
-                    using (var db = new KlantContext())
-                    {
+                    
                         var query = from b in db.Medicijnen
                                     where b.Bijwerking.Contains(medicatiezoekBox.Text)
                                     select b;
                         dataGridView2.DataSource = query.ToList();
-                    }
+                    
                 }
 
 
@@ -490,24 +461,22 @@ namespace ProjectZorgverzekering
 
             if (RADIOdoktercontract.Checked)
             {
-                using (var db = new KlantContext())
-                {
+                
                     var query = from b in db.Contracten
                                 where b.Dokter.Contains(contractzoekBox.Text)
                                 select b;
                     dataGridView4.DataSource = query.ToList();
-                }
+                
             }
 
             if (RADIOfunctiecontract.Checked)
             {
-                using (var db = new KlantContext())
-                {
+                
                     var query = from b in db.Contracten
                                 where b.Functie.Contains(contractzoekBox.Text)
                                 select b;
                     dataGridView4.DataSource = query.ToList();
-                }
+                
             }
 
             
@@ -522,13 +491,12 @@ namespace ProjectZorgverzekering
 
             db.SaveChanges();
 
-            using (var db = new KlantContext())
-            {
+            
                 var query = from b in db.Klanten
                             orderby b.KlantId
                             select b;
                 dataGridView1.DataSource = query.ToList();
-            }
+            
         }
         Klant currentKlant;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -549,28 +517,28 @@ namespace ProjectZorgverzekering
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //currentArts.Naam = ArstNaamBOX.Text.ToString();
-            ////currentArts.Verzekering = ZorgverzekeringBOX.Text.ToString();
-            //currentArts.Adresgegevens = ArtsAdresBOX.Text.ToString();
-            //currentArts.Email = ArtsEmailBOX.Text.ToString();
+            currentArts.Naam = ArstNaamBOX.Text.ToString();
+            //currentArts.Verzekering = ZorgverzekeringBOX.Text.ToString();
+            currentArts.Adresgegevens = ArtsAdresBOX.Text.ToString();
+            currentArts.Email = ArtsEmailBOX.Text.ToString();
 
-           // db2.SaveChanges();
+            db.SaveChanges();
         }
 
         Arts currentArts;
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if(e.RowIndex >= 0)
-            //{
-            //    currentArts = (Arts)dataGridView3.CurrentRow.DataBoundItem;
+            if(e.RowIndex >= 0)
+            {
+                currentArts = (Arts)dataGridView3.CurrentRow.DataBoundItem;
 
-            //    ArtsIDBOX.Text = currentArts.ArtsId.ToString();
-            //    // ArtsContractBOX.Text = currentArts. .ToString();
-            //    ArtsEmailBOX.Text = currentArts.Email.ToString();
-            //    ArtsAdresBOX.Text = currentArts.Adresgegevens.ToString();
-            //    ArstNaamBOX.Text = currentArts.Naam.ToString();
+                ArtsIDBOX.Text = currentArts.ArtsId.ToString();
+                // ArtsContractBOX.Text = currentArts. .ToString();
+                ArtsEmailBOX.Text = currentArts.Email.ToString();
+                ArtsAdresBOX.Text = currentArts.Adresgegevens.ToString();
+                ArstNaamBOX.Text = currentArts.Naam.ToString();
                 
-            //}
+            }
         }
 
         private void ArstNaamBOX_TextChanged(object sender, EventArgs e)
@@ -581,6 +549,19 @@ namespace ProjectZorgverzekering
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             
+        }
+        Contract currentContract;
+        private void ContractVerlengenKNOP_Click(object sender, EventArgs e)
+        {
+            
+            currentContract = (Contract)dataGridView4.CurrentRow.DataBoundItem;
+            currentContract.Afloopdatum = currentContract.Afloopdatum.AddYears(1);
+            db.SaveChanges();
+            var query3 = from b in db.Contracten
+                         orderby b.Afloopdatum
+                         select b;
+            dataGridView4.DataSource = query3.ToList();
+
         }
     }
 }
