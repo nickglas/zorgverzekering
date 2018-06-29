@@ -14,6 +14,10 @@ namespace ProjectZorgverzekering
 {
     public partial class Form1 : Form
     {
+        KlantContext db = new KlantContext();
+        KlantContext db2 = new KlantContext();
+
+
         public Form1()
         {
             
@@ -43,30 +47,27 @@ namespace ProjectZorgverzekering
             try
             {
                 MessageBox.Show("Druk straks op de 'Manual Refresh' knop !");
-                using (var db = new KlantContext())
-                {
+                
 
                     var query = from b in db.Klanten
                                 orderby b.Email
                                 select b;
                     dataGridView1.DataSource = query.ToList();
-                }
+                
 
-                using (var db = new KlantContext())
-                {
-                    var query = from b in db.Medicijnen
+               
+                    var query1 = from b in db.Medicijnen
                                 orderby b.MedicatieId
                                 select b;
-                    dataGridView3.DataSource = query.ToList();
-                }
+                    dataGridView3.DataSource = query1.ToList();
+                
 
-                using (var db = new KlantContext())
-                {
-                    var query = from b in db.Artsen
+                
+                    var query2 = from b in db.Artsen
                                 orderby b.ArtsId
                                 select b;
-                    dataGridView4.DataSource = query.ToList();
-                }
+                    dataGridView4.DataSource = query2.ToList();
+                
             }
             catch (Exception error)
             {
@@ -508,6 +509,71 @@ namespace ProjectZorgverzekering
             }
 
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            currentKlant.Naam = NaamBOX.Text.ToString();
+            currentKlant.Verzekering = ZorgverzekeringBOX.Text.ToString();
+            currentKlant.Adresgegevens = AdresBOX.Text.ToString();
+            currentKlant.Email = EmailBOX.Text.ToString();
+
+            db.SaveChanges();
+
+            using (var db = new KlantContext())
+            {
+                var query = from b in db.Klanten
+                            orderby b.KlantId
+                            select b;
+                dataGridView1.DataSource = query.ToList();
+            }
+        }
+        Klant currentKlant;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                currentKlant = (Klant)dataGridView1.CurrentRow.DataBoundItem;
+
+                //DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                klantid.Text = currentKlant.KlantId.ToString();
+                ZorgverzekeringBOX.Text = currentKlant.Verzekering.ToString();
+                NaamBOX.Text = currentKlant.Naam.ToString();
+                AdresBOX.Text = currentKlant.Adresgegevens.ToString();
+                EmailBOX.Text = currentKlant.Email.ToString();
+            }
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            currentArts.Naam = ArstNaamBOX.Text.ToString();
+            //currentArts.Verzekering = ZorgverzekeringBOX.Text.ToString();
+            currentArts.Adresgegevens = ArtsAdresBOX.Text.ToString();
+            currentArts.Email = ArtsEmailBOX.Text.ToString();
+
+            db2.SaveChanges();
+        }
+
+        Arts currentArts;
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                currentArts = (Arts)dataGridView3.CurrentRow.DataBoundItem;
+
+                ArtsIDBOX.Text = currentArts.ArtsId.ToString();
+                // ArtsContractBOX.Text = currentArts. .ToString();
+                ArtsEmailBOX.Text = currentArts.Email.ToString();
+                ArtsAdresBOX.Text = currentArts.Adresgegevens.ToString();
+                ArstNaamBOX.Text = currentArts.Naam.ToString();
+                
+            }
+        }
+
+        private void ArstNaamBOX_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
