@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WMPLib;
 using System.Net;
 using System.Net.Mail;
+using System.Diagnostics;
 using static ProjectZorgverzekering.Classes;
 
 namespace ProjectZorgverzekering
@@ -564,7 +565,9 @@ namespace ProjectZorgverzekering
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-
+            Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+            dataGridView1.DrawToBitmap(bm, new Rectangle(0,0 , this.dataGridView1.Width , this.dataGridView1.Height));
+            e.Graphics.DrawImage(bm,10,10);
         }
         Contract currentContract;
         private void ContractVerlengenKNOP_Click(object sender, EventArgs e)
@@ -596,26 +599,8 @@ namespace ProjectZorgverzekering
         Klant currentprintKlant;
         private void button4_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            int rows = dataGridView1.SelectedCells.Count;
-            MessageBox.Show(rows.ToString());
-            List<Print> printen = new List<Print>();
-            
-                currentprintKlant = (Klant)dataGridView1.CurrentRow.DataBoundItem;
-                currentprintKlant.Naam = currentprintKlant.Naam.ToString();
-                currentprintKlant.Adresgegevens = currentprintKlant.Adresgegevens.ToString();
-                string naam = currentprintKlant.Naam;
-                string adres = currentprintKlant.Adresgegevens;
-
-                
-
-
-
-
-
-
-
-
+            //we hadden geen idee hoe we meerdere konden printen. we konden er 1 per keer printen
+            printDocument1.Print();
 
         }
     }

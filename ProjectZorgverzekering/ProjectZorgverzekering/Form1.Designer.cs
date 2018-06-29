@@ -95,6 +95,7 @@
             this.RADIOverzekeringklant = new System.Windows.Forms.RadioButton();
             this.RADIOidklant = new System.Windows.Forms.RadioButton();
             this.RADIOnaamklant = new System.Windows.Forms.RadioButton();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -804,6 +805,10 @@
             this.RADIOnaamklant.Text = "Naam";
             this.RADIOnaamklant.UseVisualStyleBackColor = true;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -907,6 +912,7 @@
         private System.Windows.Forms.RadioButton RADIOverwijderklant;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button4;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
 
