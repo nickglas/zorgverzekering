@@ -19,9 +19,9 @@ namespace ProjectZorgverzekering
 
         public Form1()
         {
-            
+
             InitializeComponent();
-            
+
 
         }
 
@@ -46,34 +46,34 @@ namespace ProjectZorgverzekering
             try
             {
                 MessageBox.Show("Druk straks op de 'Manual Refresh' knop !");
-                
 
-                    var query = from b in db.Klanten
-                                orderby b.Email
-                                select b;
-                    dataGridView1.DataSource = query.ToList();
-                
 
-               
-                    var query1 = from b in db.Medicijnen
-                                orderby b.MedicatieId
-                                select b;
-                    dataGridView3.DataSource = query1.ToList();
-                
+                var query = from b in db.Klanten
+                            orderby b.Email
+                            select b;
+                dataGridView1.DataSource = query.ToList();
 
-                
-                    var query2 = from b in db.Artsen
-                                orderby b.ArtsId
-                                select b;
-                    dataGridView4.DataSource = query2.ToList();
-                
+
+
+                var query1 = from b in db.Medicijnen
+                             orderby b.MedicatieId
+                             select b;
+                dataGridView3.DataSource = query1.ToList();
+
+
+
+                var query2 = from b in db.Artsen
+                             orderby b.ArtsId
+                             select b;
+                dataGridView4.DataSource = query2.ToList();
+
             }
             catch (Exception error)
             {
 
                 MessageBox.Show(error.Message);
             }
-            
+
         }
 
         public void KlantInvoegenKNOP_Click(object sender, EventArgs e)
@@ -90,37 +90,37 @@ namespace ProjectZorgverzekering
             artsform.ShowDialog();
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-                var query = from b in db.Klanten
-                            orderby b.KlantId
-                            select b;
-                dataGridView1.DataSource = query.ToList();
-            
 
-            
-                var query1 = from b in db.Medicijnen
-                            orderby b.MedicatieId
-                            select b;
-                dataGridView2.DataSource = query1.ToList();
-            
+            var query = from b in db.Klanten
+                        orderby b.KlantId
+                        select b;
+            dataGridView1.DataSource = query.ToList();
 
-            
-                var query2 = from b in db.Artsen
-                            orderby b.ArtsId
-                            select b;
-                dataGridView3.DataSource = query2.ToList();
-            
 
-            
-                var query3 = from b in db.Contracten
-                            orderby b.Afloopdatum
-                            select b;
-                dataGridView4.DataSource = query3.ToList();
-            
+
+            var query1 = from b in db.Medicijnen
+                         orderby b.MedicatieId
+                         select b;
+            dataGridView2.DataSource = query1.ToList();
+
+
+
+            var query2 = from b in db.Artsen
+                         orderby b.ArtsId
+                         select b;
+            dataGridView3.DataSource = query2.ToList();
+
+
+
+            var query3 = from b in db.Contracten
+                         orderby b.Afloopdatum
+                         select b;
+            dataGridView4.DataSource = query3.ToList();
+
 
         }
 
@@ -129,7 +129,7 @@ namespace ProjectZorgverzekering
 
             if (dataGridView1.SelectedRows != null)
             {
-                if(!RADIOverwijderarts.Checked && !RADIOverwijdercontract.Checked && !RADIOverwijderklant.Checked && !RADIOverwijdermedicijn.Checked)
+                if (!RADIOverwijderarts.Checked && !RADIOverwijdercontract.Checked && !RADIOverwijderklant.Checked && !RADIOverwijdermedicijn.Checked)
                 {
                     MessageBox.Show("Selecteer een item wat u wilt verwijderen");
                 }
@@ -142,15 +142,17 @@ namespace ProjectZorgverzekering
                             if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 //code uitvoeren om te verwijderen
-                                using (var ctx = new KlantContext())
-                                {
-                                    int rowindex = dataGridView3.CurrentCell.RowIndex;
-                                    int columnindex = dataGridView3.CurrentCell.ColumnIndex;
-                                    var arts = new Arts { ArtsId = Convert.ToInt32(dataGridView3.Rows[rowindex].Cells[columnindex].Value) };
-                                    ctx.Artsen.Attach(arts);
-                                    ctx.Artsen.Remove(arts);
-                                    ctx.SaveChanges();
-                                }
+
+                                int rowindex = dataGridView3.CurrentCell.RowIndex;
+                                int columnindex = dataGridView3.CurrentCell.ColumnIndex;
+                                int artsId = Convert.ToInt32(dataGridView3.Rows[rowindex].Cells[columnindex].Value);
+                                
+
+                                var arts = db.Artsen.Find(artsId);
+                                db.Artsen.Remove(arts);
+
+                                db.SaveChanges();
+
                                 MessageBox.Show("Succesvol verwijderd");
                             }
                             else
@@ -171,15 +173,17 @@ namespace ProjectZorgverzekering
                             if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 //code uitvoeren om te verwijderen
-                                using (var ctx = new KlantContext())
-                                {
-                                    int rowindex = dataGridView4.CurrentCell.RowIndex;
-                                    int columnindex = dataGridView4.CurrentCell.ColumnIndex;
-                                    var contract = new Contract { ContractId = Convert.ToInt32(dataGridView4.Rows[rowindex].Cells[columnindex].Value) };
-                                    ctx.Contracten.Attach(contract);
-                                    ctx.Contracten.Remove(contract);
-                                    ctx.SaveChanges();
-                                }
+
+                                int rowindex = dataGridView4.CurrentCell.RowIndex;
+                                int columnindex = dataGridView4.CurrentCell.ColumnIndex;
+                                int contractId = Convert.ToInt32(dataGridView4.Rows[rowindex].Cells[columnindex].Value);
+
+
+                                var contract = db.Contracten.Find(contractId);
+                                db.Contracten.Remove(contract);
+
+                                db.SaveChanges();
+
                                 MessageBox.Show("Succesvol verwijderd");
                             }
                             else
@@ -202,15 +206,14 @@ namespace ProjectZorgverzekering
                             if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 //code uitvoeren om te verwijderen
-                                using (var ctx = new KlantContext())
-                                {
-                                    int rowindex = dataGridView1.CurrentCell.RowIndex;
-                                    int columnindex = dataGridView1.CurrentCell.ColumnIndex;
-                                    var klant = new Klant { KlantId = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[columnindex].Value) };
-                                    ctx.Klanten.Attach(klant);
-                                    ctx.Klanten.Remove(klant);
-                                    ctx.SaveChanges();
-                                }
+
+                                int rowindex = dataGridView1.CurrentCell.RowIndex;
+                                int columnindex = dataGridView1.CurrentCell.ColumnIndex;
+                                var klant = new Klant { KlantId = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[columnindex].Value) };
+                                db.Klanten.Attach(klant);
+                                db.Klanten.Remove(klant);
+                                db.SaveChanges();
+
                                 MessageBox.Show("Succesvol verwijderd");
                             }
                             else
@@ -233,15 +236,14 @@ namespace ProjectZorgverzekering
                             if (MessageBox.Show("Weet je zeker dat je dit record wilt verwijderen ? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 //code uitvoeren om te verwijderen
-                                using (var ctx = new KlantContext())
-                                {
-                                    int rowindex = dataGridView2.CurrentCell.RowIndex;
-                                    int columnindex = dataGridView2.CurrentCell.ColumnIndex;
-                                    var medicatie = new Medicatie { MedicatieId = Convert.ToInt32(dataGridView2.Rows[rowindex].Cells[columnindex].Value) };
-                                    ctx.Medicijnen.Attach(medicatie);
-                                    ctx.Medicijnen.Remove(medicatie);
-                                    ctx.SaveChanges();
-                                }
+
+                                int rowindex = dataGridView2.CurrentCell.RowIndex;
+                                int columnindex = dataGridView2.CurrentCell.ColumnIndex;
+                                var medicatie = new Medicatie { MedicatieId = Convert.ToInt32(dataGridView2.Rows[rowindex].Cells[columnindex].Value) };
+                                db.Medicijnen.Attach(medicatie);
+                                db.Medicijnen.Remove(medicatie);
+                                db.SaveChanges();
+
                                 MessageBox.Show("Succesvol verwijderd");
                             }
                             else
@@ -258,7 +260,7 @@ namespace ProjectZorgverzekering
                     }
                 }
 
-            }          
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -285,51 +287,51 @@ namespace ProjectZorgverzekering
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (RADIOadres != null && RADIOemail != null && RADIOid != null && RADIOtelefoon != null && RADIOnaam != null )
+            if (RADIOadres != null && RADIOemail != null && RADIOid != null && RADIOtelefoon != null && RADIOnaam != null)
             {
                 if (RADIOid.Checked)
                 {
                     ArtszoekBox.Text = "";
                     MessageBox.Show("in onderhoud");
-                    
+
 
                 }
 
                 if (RADIOadres.Checked)
                 {
-                    
-                        var query = from b in db.Artsen
-                                    where b.Adresgegevens.Contains(ArtszoekBox.Text)
-                                    select b;
-                        dataGridView3.DataSource = query.ToList();
-                    
+
+                    var query = from b in db.Artsen
+                                where b.Adresgegevens.Contains(ArtszoekBox.Text)
+                                select b;
+                    dataGridView3.DataSource = query.ToList();
+
                 }
 
                 if (RADIOemail.Checked)
                 {
-                    
-                        var query = from b in db.Artsen
-                                    where b.Email.Contains(ArtszoekBox.Text)
-                                    select b;
-                        dataGridView3.DataSource = query.ToList();
-                    
+
+                    var query = from b in db.Artsen
+                                where b.Email.Contains(ArtszoekBox.Text)
+                                select b;
+                    dataGridView3.DataSource = query.ToList();
+
                 }
 
                 if (RADIOnaam.Checked)
                 {
-                    
-                        var query = from b in db.Artsen
-                                    where b.Naam.Contains(ArtszoekBox.Text)
-                                    select b;
-                        dataGridView3.DataSource = query.ToList();
-                    
+
+                    var query = from b in db.Artsen
+                                where b.Naam.Contains(ArtszoekBox.Text)
+                                select b;
+                    dataGridView3.DataSource = query.ToList();
+
                 }
 
                 if (RADIOtelefoon.Checked)
                 {
                     ArtszoekBox.Text = "";
                     MessageBox.Show("in onderhoud");
-                    
+
                 }
 
 
@@ -339,7 +341,7 @@ namespace ProjectZorgverzekering
                 MessageBox.Show("Selecteer het item waarop u wilt filteren.");
             }
 
-            
+
         }
 
         private void klantzoekBox_TextChanged(object sender, EventArgs e)
@@ -356,42 +358,42 @@ namespace ProjectZorgverzekering
 
                 if (RADIOadresklant.Checked)
                 {
-                    
-                        var query = from b in db.Klanten
-                                    where b.Adresgegevens.Contains(klantzoekBox.Text)
-                                    select b;
-                        dataGridView1.DataSource = query.ToList();
-                    
+
+                    var query = from b in db.Klanten
+                                where b.Adresgegevens.Contains(klantzoekBox.Text)
+                                select b;
+                    dataGridView1.DataSource = query.ToList();
+
                 }
 
                 if (RADIOemailklant.Checked)
                 {
-                    
-                        var query = from b in db.Klanten
-                                    where b.Email.Contains(klantzoekBox.Text)
-                                    select b;
-                        dataGridView1.DataSource = query.ToList();
-                    
+
+                    var query = from b in db.Klanten
+                                where b.Email.Contains(klantzoekBox.Text)
+                                select b;
+                    dataGridView1.DataSource = query.ToList();
+
                 }
 
                 if (RADIOnaamklant.Checked)
                 {
-                    
-                        var query = from b in db.Klanten
-                                    where b.Naam.Contains(klantzoekBox.Text)
-                                    select b;
-                        dataGridView1.DataSource = query.ToList();
-                    
+
+                    var query = from b in db.Klanten
+                                where b.Naam.Contains(klantzoekBox.Text)
+                                select b;
+                    dataGridView1.DataSource = query.ToList();
+
                 }
 
                 if (RADIOverzekeringklant.Checked)
                 {
-                    
-                        var query = from b in db.Klanten
-                                    where b.Verzekering.Contains(klantzoekBox.Text)
-                                    select b;
-                        dataGridView1.DataSource = query.ToList();
-                    
+
+                    var query = from b in db.Klanten
+                                where b.Verzekering.Contains(klantzoekBox.Text)
+                                select b;
+                    dataGridView1.DataSource = query.ToList();
+
 
                 }
 
@@ -405,48 +407,48 @@ namespace ProjectZorgverzekering
 
         private void medicatiezoekBox_TextChanged(object sender, EventArgs e)
         {
-           
-                if (RADIOidmedicatie.Checked)
-                {
-                    ArtszoekBox.Text = "";
-                    MessageBox.Show("in onderhoud");
+
+            if (RADIOidmedicatie.Checked)
+            {
+                ArtszoekBox.Text = "";
+                MessageBox.Show("in onderhoud");
 
 
-                }
+            }
 
-                if (RADIOnaammedicatie.Checked)
-                {
-                   
-                        var query = from b in db.Medicijnen
-                                    where b.Naam.Contains(medicatiezoekBox.Text)
-                                    select b;
-                        dataGridView2.DataSource = query.ToList();
-                    
-                }
+            if (RADIOnaammedicatie.Checked)
+            {
 
-                if (RADIObeschrijvingmedicatie.Checked)
-                {
-                    
-                        var query = from b in db.Medicijnen
-                                    where b.Beschrijving.Contains(medicatiezoekBox.Text)
-                                    select b;
-                        dataGridView2.DataSource = query.ToList();
-                    
-                }
+                var query = from b in db.Medicijnen
+                            where b.Naam.Contains(medicatiezoekBox.Text)
+                            select b;
+                dataGridView2.DataSource = query.ToList();
 
-                if (RADIObijwerkingmedicatie.Checked)
-                {
-                    
-                        var query = from b in db.Medicijnen
-                                    where b.Bijwerking.Contains(medicatiezoekBox.Text)
-                                    select b;
-                        dataGridView2.DataSource = query.ToList();
-                    
-                }
+            }
+
+            if (RADIObeschrijvingmedicatie.Checked)
+            {
+
+                var query = from b in db.Medicijnen
+                            where b.Beschrijving.Contains(medicatiezoekBox.Text)
+                            select b;
+                dataGridView2.DataSource = query.ToList();
+
+            }
+
+            if (RADIObijwerkingmedicatie.Checked)
+            {
+
+                var query = from b in db.Medicijnen
+                            where b.Bijwerking.Contains(medicatiezoekBox.Text)
+                            select b;
+                dataGridView2.DataSource = query.ToList();
+
+            }
 
 
-            
-            
+
+
         }
 
         private void contractzoekBox_TextChanged(object sender, EventArgs e)
@@ -461,25 +463,25 @@ namespace ProjectZorgverzekering
 
             if (RADIOdoktercontract.Checked)
             {
-                
-                    var query = from b in db.Contracten
-                                where b.Dokter.Contains(contractzoekBox.Text)
-                                select b;
-                    dataGridView4.DataSource = query.ToList();
-                
+
+                var query = from b in db.Contracten
+                            where b.Dokter.Contains(contractzoekBox.Text)
+                            select b;
+                dataGridView4.DataSource = query.ToList();
+
             }
 
             if (RADIOfunctiecontract.Checked)
             {
-                
-                    var query = from b in db.Contracten
-                                where b.Functie.Contains(contractzoekBox.Text)
-                                select b;
-                    dataGridView4.DataSource = query.ToList();
-                
+
+                var query = from b in db.Contracten
+                            where b.Functie.Contains(contractzoekBox.Text)
+                            select b;
+                dataGridView4.DataSource = query.ToList();
+
             }
 
-            
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -491,12 +493,12 @@ namespace ProjectZorgverzekering
 
             db.SaveChanges();
 
-            
-                var query = from b in db.Klanten
-                            orderby b.KlantId
-                            select b;
-                dataGridView1.DataSource = query.ToList();
-            
+
+            var query = from b in db.Klanten
+                        orderby b.KlantId
+                        select b;
+            dataGridView1.DataSource = query.ToList();
+
         }
         Klant currentKlant;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -528,7 +530,7 @@ namespace ProjectZorgverzekering
         Arts currentArts;
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 currentArts = (Arts)dataGridView3.CurrentRow.DataBoundItem;
 
@@ -537,7 +539,7 @@ namespace ProjectZorgverzekering
                 ArtsEmailBOX.Text = currentArts.Email.ToString();
                 ArtsAdresBOX.Text = currentArts.Adresgegevens.ToString();
                 ArstNaamBOX.Text = currentArts.Naam.ToString();
-                
+
             }
         }
 
@@ -548,12 +550,12 @@ namespace ProjectZorgverzekering
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            
+
         }
         Contract currentContract;
         private void ContractVerlengenKNOP_Click(object sender, EventArgs e)
         {
-            
+
             currentContract = (Contract)dataGridView4.CurrentRow.DataBoundItem;
             currentContract.Afloopdatum = currentContract.Afloopdatum.AddYears(1);
             db.SaveChanges();
