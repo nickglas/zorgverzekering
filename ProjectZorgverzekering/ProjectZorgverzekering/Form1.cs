@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using static ProjectZorgverzekering.Classes;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 
 namespace ProjectZorgverzekering
 {
     public partial class Form1 : Form
     {
         KlantContext db = new KlantContext();
-        KlantContext db2 = new KlantContext();
+        
 
 
         public Form1()
@@ -547,33 +549,38 @@ namespace ProjectZorgverzekering
 
         private void button6_Click(object sender, EventArgs e)
         {
-            currentArts.Naam = ArstNaamBOX.Text.ToString();
-            //currentArts.Verzekering = ZorgverzekeringBOX.Text.ToString();
-            currentArts.Adresgegevens = ArtsAdresBOX.Text.ToString();
-            currentArts.Email = ArtsEmailBOX.Text.ToString();
+            //currentArts.Naam = ArstNaamBOX.Text.ToString();
+            ////currentArts.Verzekering = ZorgverzekeringBOX.Text.ToString();
+            //currentArts.Adresgegevens = ArtsAdresBOX.Text.ToString();
+            //currentArts.Email = ArtsEmailBOX.Text.ToString();
 
-            db2.SaveChanges();
+           // db2.SaveChanges();
         }
 
         Arts currentArts;
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
-            {
-                currentArts = (Arts)dataGridView3.CurrentRow.DataBoundItem;
+            //if(e.RowIndex >= 0)
+            //{
+            //    currentArts = (Arts)dataGridView3.CurrentRow.DataBoundItem;
 
-                ArtsIDBOX.Text = currentArts.ArtsId.ToString();
-                // ArtsContractBOX.Text = currentArts. .ToString();
-                ArtsEmailBOX.Text = currentArts.Email.ToString();
-                ArtsAdresBOX.Text = currentArts.Adresgegevens.ToString();
-                ArstNaamBOX.Text = currentArts.Naam.ToString();
+            //    ArtsIDBOX.Text = currentArts.ArtsId.ToString();
+            //    // ArtsContractBOX.Text = currentArts. .ToString();
+            //    ArtsEmailBOX.Text = currentArts.Email.ToString();
+            //    ArtsAdresBOX.Text = currentArts.Adresgegevens.ToString();
+            //    ArstNaamBOX.Text = currentArts.Naam.ToString();
                 
-            }
+            //}
         }
 
         private void ArstNaamBOX_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            
         }
     }
 }
